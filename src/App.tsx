@@ -28,7 +28,7 @@ export default function App() {
   }, [])
 
   const navItems = [
-    { href: '#tech', label: 'Technologies' },
+    { href: '#tech', label: 'Solutions' },
     { href: '#platform', label: 'Platform' },
     { href: '#impact', label: 'Impact' },
     { href: '#insights', label: 'Insights' },
@@ -63,7 +63,7 @@ export default function App() {
                 We build intelligent systems that understand medical images like experts do. From coronary scoring with <strong>Corsight</strong> to 3D surgical planning with <strong>OneView</strong>, renal stone analysis with <strong>Urologiq</strong>, and whole-body longevity screening with <strong>Healthmetrix</strong>, our AI augments clinicians with precision, speed, and trust.
               </p>
               <div className="mt-6 flex gap-3">
-                <a href="#tech" className="rounded-xl px-4 py-2 bg-white/10 hover:bg-white/15 border border-white/10">Discover Our Technologies</a>
+                <a href="#tech" className="rounded-xl px-4 py-2 bg-white/10 hover:bg-white/15 border border-white/10">Discover Our Solutions</a>
                 <a href="#platform" className="rounded-xl px-4 py-2 border border-white/10 hover:bg-white/10">How it works</a>
               </div>
             </div>
@@ -77,7 +77,7 @@ export default function App() {
       </div>
 
       <div className="relative py-14" id="tech">
-        <Section title="Our AI in Action" kicker="Technologies">
+        <Section title="Our AI in Action" kicker="Solutions">
           <div className="grid md:grid-cols-4 gap-6">
             <TechCard title="Corsight" tag="Cardiology" blurb="Detects and quantifies coronary calcium on non-gated CT with expert-level agreement." onClick={() => setShowReasoning(true)} />
             <TechCard title="OneView" tag="Oncology" blurb="3D reconstruction for surgical planning — helps oncologists and surgeons operate with greater precision and confidence." onClick={() => setShowReasoning(true)} />
