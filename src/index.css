@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root { height: 100%; }
+
+/* Smooth fonts on dark bg */
+body { background: #070b16; color: #e5e7eb; }
