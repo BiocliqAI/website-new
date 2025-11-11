@@ -16,9 +16,9 @@ export default function App() {
     const cards = document.querySelectorAll('[data-testid^="tech-card-"]')
     console.assert(cards.length === 4, `[TEST] Expected 4 tech cards, found ${cards.length}`)
 
-    const longevity = document.getElementById('longevity')
-    console.assert(!!longevity, '[TEST] Longevity section (#longevity) should exist')
-    const biomarkers = longevity ? longevity.querySelectorAll('[data-testid="biomarker-item"]') : []
+    const regulatory = document.getElementById('regulatory')
+    console.assert(!!regulatory, '[TEST] Regulatory section (#regulatory) should exist')
+    const biomarkers = regulatory ? regulatory.querySelectorAll('[data-testid="biomarker-item"]') : []
     console.assert(biomarkers.length >= 6, `[TEST] Expected at least 6 biomarker items, found ${biomarkers.length}`)
 
     const text = document.body.innerText || ''
@@ -28,12 +28,11 @@ export default function App() {
   }, [])
 
   const navItems = [
-    { href: '#tech', label: 'Solutions' },
-    { href: '#platform', label: 'Platform' },
-    { href: '#impact', label: 'Impact' },
-    { href: '#insights', label: 'Insights' },
-    { href: '#longevity', label: 'Longevity' },
-    { href: '#contact', label: 'Contact' }
+    { href: '#products', label: 'Products' },
+    { href: '#research', label: 'Research' },
+    { href: '#regulatory', label: 'Regulatory' },
+    { href: '#social-media', label: 'Social Media' },
+    { href: '#about-us', label: 'About Us' }
   ]
 
   return (
@@ -76,8 +75,8 @@ export default function App() {
         </Section>
       </div>
 
-      <div className="relative py-14" id="tech">
-        <Section title="Our AI in Action" kicker="Solutions">
+      <div className="relative py-14" id="products">
+        <Section title="Our AI in Action" kicker="Products">
           <div className="grid md:grid-cols-4 gap-6">
             <TechCard title="Corsight" tag="Cardiology" blurb="Detects and quantifies coronary calcium on non-gated CT with expert-level agreement." onClick={() => setShowReasoning(true)} />
             <TechCard title="OneView" tag="Oncology" blurb="3D reconstruction for surgical planning — helps oncologists and surgeons operate with greater precision and confidence." onClick={() => setShowReasoning(true)} />
@@ -86,7 +85,7 @@ export default function App() {
           </div>
 
           <div className="mt-8 rounded-2xl border border-white/10 bg-white/[0.03] p-6">
-            <div className="flex items-center justify-between gap-4">
+            <div className="flex items-center justify-between gap-4" id="research">
               <div>
                 <h3 className="text-white font-semibold">See how our AI thinks</h3>
                 <p className="text-slate-400 text-sm">Transparent, step-by-step medical reasoning</p>
@@ -112,7 +111,7 @@ export default function App() {
         </Section>
       </div>
 
-      <div className="relative py-14" id="longevity">
+      <div className="relative py-14" id="regulatory">
         <Section title="Longevity & Preventive Health" kicker="Healthmetrix">
           <div className="grid md:grid-cols-2 gap-8 items-start">
             <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
@@ -143,14 +142,14 @@ export default function App() {
               </div>
             </div>
           </div>
-          <div className="mt-6 flex flex-wrap gap-3">
+          <div className="mt-6 flex flex-wrap gap-3" id="social-media">
             <a href="#contact" className="rounded-full px-4 py-2 bg-cyan-500 text-slate-900 text-sm font-medium hover:brightness-110">Talk about Healthmetrix</a>
             <a href="#" className="rounded-full px-4 py-2 border border-white/10 text-sm hover:bg-white/10">View sample report</a>
           </div>
         </Section>
       </div>
 
-      <div className="relative py-14" id="impact">
+      <div className="relative py-14" id="about-us">
         <Section title="Proven Accuracy, Real Results" kicker="Impact">
           <div className="grid md:grid-cols-4 gap-6">
             <Metric k="1M+" v="Images processed" />
@@ -169,10 +168,11 @@ export default function App() {
           <p className="text-slate-400 text-sm">© 2025 Biocliq AI. Building the intelligent healthcare future.</p>
           <nav className="flex items-center gap-5 text-sm">
             {[
-              { href: '#tech', label: 'Products' },
-              { href: '#longevity', label: 'Longevity' },
-              { href: '#impact', label: 'Impact' },
-              { href: '#contact', label: 'Contact' },
+              { href: '#products', label: 'Products' },
+              { href: '#research', label: 'Research' },
+              { href: '#regulatory', label: 'Regulatory' },
+              { href: '#social-media', label: 'Social Media' },
+              { href: '#about-us', label: 'About Us' },
             ].map(n => <a key={n.href} href={n.href} className="text-slate-400 hover:text-white transition">{n.label}</a>)}
           </nav>
         </div>
