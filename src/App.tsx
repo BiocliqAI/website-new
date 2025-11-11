@@ -55,11 +55,11 @@ export default function App() {
 
       <div className="relative py-14">
         <GlowOrb />
-        <Section id="intro" title="Why Biocliq Exists" kicker="Our mission">
+        <Section id="intro" kicker="Our mission">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <p className="text-lg text-slate-300 leading-relaxed">
-                We build intelligent systems that understand medical images like experts do. From coronary scoring with <strong>Corsight</strong> to 3D surgical planning with <strong>OneView</strong>, renal stone analysis with <strong>Urologiq</strong>, and whole-body longevity screening with <strong>Healthmetrix</strong>, our AI augments clinicians with precision, speed, and trust.
+                Biocliq’s mission is to make advanced medical AI accessible to every healthcare system — improving diagnosis, personalizing treatment, and transforming the future of global health.
               </p>
               <div className="mt-6 flex gap-3">
                 <a href="#tech" className="rounded-xl px-4 py-2 bg-white/10 hover:bg-white/15 border border-white/10">Discover Our Solutions</a>
