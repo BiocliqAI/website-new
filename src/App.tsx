@@ -81,7 +81,7 @@ export default function App() {
             <TechCard title="Urologiq" tag="Urology" blurb="Identifies and measures renal stones on non-contrast CT for faster decisions." onClick={() => setShowReasoning(true)} />
             <TechCard title="Corsight" tag="Cardiology" blurb="Detects and quantifies coronary calcium on non-gated CT with expert-level agreement." onClick={() => setShowReasoning(true)} />
             <TechCard title="OneView" tag="Oncology" blurb="3D reconstruction for surgical planning — helps oncologists and surgeons operate with greater precision and confidence." onClick={() => setShowReasoning(true)} />
-            <TechCard title="Llama" tag="Vascular" blurb="Reports peripheral arterial disease indicators with explainable imaging-based insights." onClick={() => setShowReasoning(true)} />
+            <TechCard title="Llama" tag="Vascular" blurb="Automated structured reporting of CTA Peripheral imaging." onClick={() => setShowReasoning(true)} />
           </div>
 
           <div className="mt-8 rounded-2xl border border-white/10 bg-white/[0.03] p-6">
