@@ -68,7 +68,7 @@ export default function App() {
 
       <div className="relative py-14" id="products">
         <Section title="Our AI in Action" kicker="Products">
-          <div className="grid md:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 xl:grid-cols-2 gap-6">
             <TechCard title="Urologiq" tag="Urology" blurb="Identifies and measures renal stones on non-contrast CT for faster decisions." />
             <TechCard title="Corsight" tag="Cardiology" blurb="Detects and quantifies coronary calcium on non-gated CT with expert-level agreement." />
             <TechCard title="OneView" tag="Oncology" blurb="3D reconstruction for surgical planning — helps oncologists and surgeons operate with greater precision and confidence." />
