@@ -22,7 +22,7 @@ export default function App() {
     console.assert(biomarkers.length >= 6, `[TEST] Expected at least 6 biomarker items, found ${biomarkers.length}`)
 
     const text = document.body.innerText || ''
-    ;['Corsight', 'OneView', 'Urologiq', 'Healthmetrix'].forEach((name) => {
+    ;['Urologiq', 'Corsight', 'OneView', 'Llama'].forEach((name) => {
       console.assert(text.includes(name), `[TEST] Missing product name in DOM: ${name}`)
     })
   }, [])
@@ -78,10 +78,10 @@ export default function App() {
       <div className="relative py-14" id="products">
         <Section title="Our AI in Action" kicker="Products">
           <div className="grid md:grid-cols-4 gap-6">
+            <TechCard title="Urologiq" tag="Urology" blurb="Identifies and measures renal stones on non-contrast CT for faster decisions." onClick={() => setShowReasoning(true)} />
             <TechCard title="Corsight" tag="Cardiology" blurb="Detects and quantifies coronary calcium on non-gated CT with expert-level agreement." onClick={() => setShowReasoning(true)} />
             <TechCard title="OneView" tag="Oncology" blurb="3D reconstruction for surgical planning — helps oncologists and surgeons operate with greater precision and confidence." onClick={() => setShowReasoning(true)} />
-            <TechCard title="Urologiq" tag="Urology" blurb="Identifies and measures renal stones on non-contrast CT for faster decisions." onClick={() => setShowReasoning(true)} />
-            <TechCard title="Healthmetrix" tag="Longevity" blurb="Analyzes whole-body MRI/CT to detect over 50 biomarkers — identifying disease risk well before clinical manifestation." onClick={() => setShowReasoning(true)} />
+            <TechCard title="Llama" tag="Vascular" blurb="Reports peripheral arterial disease indicators with explainable imaging-based insights." onClick={() => setShowReasoning(true)} />
           </div>
 
           <div className="mt-8 rounded-2xl border border-white/10 bg-white/[0.03] p-6">
