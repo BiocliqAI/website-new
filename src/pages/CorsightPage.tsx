@@ -125,8 +125,10 @@ export default function CorsightPage() {
               Corsight delivers structured reports across the four-tier CAC scale&mdash;from <em>No Risk</em> to <em>High Risk</em>&mdash;so clinicians can personalize interventions ranging from lifestyle changes to advanced therapies.
             </p>
           </div>
-          <div className="rounded-2xl border border-white/10 bg-white/[0.03] overflow-hidden">
-            <img src="/corsight-overview.png" alt="Corsight clinical overview" className="w-full h-full object-cover" />
+          <div className="flex justify-center">
+            <div className="w-full md:w-1/2 rounded-2xl border border-white/10 bg-white/[0.03] overflow-hidden">
+              <img src="/corsight-overview.png" alt="Corsight clinical overview" className="w-full h-full object-cover" />
+            </div>
           </div>
         </div>
       </Section>
