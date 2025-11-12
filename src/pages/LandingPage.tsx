@@ -87,7 +87,7 @@ export default function LandingPage() {
             <TechCard
               title="Corsight"
               tag="Cardiology"
-              blurb="Detects and quantifies coronary calcium on non-gated CT with expert-level agreement."
+              blurb="Coronary Calcium and Aneurysm detection on Non-Gated CT"
               href="/corsight"
             />
             <TechCard
