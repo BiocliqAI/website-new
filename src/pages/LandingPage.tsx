@@ -81,7 +81,7 @@ export default function LandingPage() {
             <TechCard
               title="Urologiq"
               tag="Urology"
-              blurb="Identifies and measures renal stones on non-contrast CT for faster decisions."
+              blurb="Delivers smart reports that Urologists love!"
               href="mailto:info@biocliq.com?subject=Learn%20more%20about%20Urologiq"
             />
             <TechCard
