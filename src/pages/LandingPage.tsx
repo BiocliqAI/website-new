@@ -44,7 +44,7 @@ export default function LandingPage() {
       </header>
 
       <div className="relative">
-        <Section id="hero" className="pt-24 md:pt-32">
+        <Section id="hero" className="pt-20 md:pt-28">
           <ReactiveMesh />
         </Section>
       </div>
