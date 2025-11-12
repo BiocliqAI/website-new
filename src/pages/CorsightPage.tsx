@@ -116,7 +116,7 @@ export default function CorsightPage() {
       </div>
 
       <Section kicker="Clinical context" title="Coronary Artery Calcification in focus">
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-8 items-center">
           <div className="space-y-4 text-sm md:text-base text-slate-300">
             <p>
               <strong>CAC is the earliest and most reliable indicator of cardiovascular risk.</strong> Accurate scoring enables cardiologists to stratify patients and act before adverse events.
@@ -125,16 +125,8 @@ export default function CorsightPage() {
               Corsight delivers structured reports across the four-tier CAC scale&mdash;from <em>No Risk</em> to <em>High Risk</em>&mdash;so clinicians can personalize interventions ranging from lifestyle changes to advanced therapies.
             </p>
           </div>
-          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 space-y-4 text-sm md:text-base text-slate-300">
-            <h3 className="text-white text-lg font-semibold">Key takeaways</h3>
-            <ul className="space-y-2 list-disc list-inside">
-              <li>Trusted quantitative signal that augments traditional risk scores.</li>
-              <li>Guides prevention strategies for asymptomatic individuals.</li>
-              <li>Supports clinician-patient conversations with tangible evidence.</li>
-            </ul>
-            <blockquote className="text-slate-400 text-sm italic border-l-2 border-cyan-400/50 pl-3">
-              “Early detection through CAC scoring can help prevent major cardiac events. Consult your doctor today.”
-            </blockquote>
+          <div className="rounded-2xl border border-white/10 bg-white/[0.03] overflow-hidden">
+            <img src="/corsight-overview.png" alt="Corsight clinical overview" className="w-full h-full object-cover" />
           </div>
         </div>
       </Section>
