@@ -99,10 +99,10 @@ export default function CorsightPage() {
             <Badge>Preventive Care</Badge>
           </div>
           <h1 className="text-3xl md:text-6xl font-semibold tracking-tight text-white max-w-3xl mx-auto">
-            Corsight™ automates coronary calcium scoring on routine, non-gated CT
+            Corsight™  coronary calcium scoring on non-gated CT
           </h1>
           <p className="mt-6 max-w-2xl mx-auto text-slate-300 text-base md:text-lg">
-            Revolutionizing cardiovascular risk assessment with rapid, affordable CAC scoring that plugs into today’s imaging infrastructure and unlocks proactive prevention programs.
+            Revolutionizing rapid, affordable CAC scoring that plugs into routine Chest CT scans.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <a href="mailto:info@biocliq.com?subject=Corsight%20demo" className="rounded-full px-5 py-2.5 bg-cyan-500 text-slate-900 font-medium hover:brightness-110 transition">
@@ -162,30 +162,6 @@ export default function CorsightPage() {
         </div>
       </Section>
 
-      <Section title="Why providers choose Corsight" kicker="Competitive advantage">
-        <div className="overflow-x-auto">
-          <table className="min-w-full border-separate border-spacing-y-3 text-sm md:text-base text-slate-300">
-            <thead className="text-left text-xs uppercase tracking-wider text-slate-400">
-              <tr>
-                <th className="px-4 py-2">Feature</th>
-                <th className="px-4 py-2 text-white">Corsight</th>
-                <th className="px-4 py-2">ECG-gated CT</th>
-                <th className="px-4 py-2">Typical AI competitor</th>
-              </tr>
-            </thead>
-            <tbody>
-              {comparison.map((row) => (
-                <tr key={row.feature} className="rounded-2xl border border-white/10 bg-white/[0.03]">
-                  <td className="px-4 py-3 font-medium text-white">{row.feature}</td>
-                  <td className="px-4 py-3 text-cyan-200">{row.ours}</td>
-                  <td className="px-4 py-3">{row.gated}</td>
-                  <td className="px-4 py-3">{row.competitor}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </Section>
 
       <Section id="validation" title="Clinically proven accuracy" kicker="Validation">
         <div className="grid md:grid-cols-2 gap-8 items-center">
