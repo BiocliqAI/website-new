@@ -43,13 +43,13 @@ export default function LandingPage() {
         </div>
       </header>
 
-      <div className="relative py-14 md:py-20">
-        <Section id="hero">
+      <div className="relative">
+        <Section id="hero" className="pt-24 md:pt-32">
           <ReactiveMesh />
         </Section>
       </div>
 
-      <div className="relative py-14">
+      <div className="relative">
         <GlowOrb />
         <Section id="intro" kicker="Our mission">
           <div className="grid md:grid-cols-2 gap-8 items-center">
@@ -75,7 +75,7 @@ export default function LandingPage() {
         </Section>
       </div>
 
-      <div className="relative py-14" id="products">
+      <div className="relative" id="products">
         <Section title="Our AI in Action" kicker="Products">
           <div className="grid md:grid-cols-2 gap-6">
             <TechCard
@@ -106,7 +106,7 @@ export default function LandingPage() {
         </Section>
       </div>
 
-      <div className="relative py-14" id="about-us">
+      <div className="relative" id="about-us">
         <Section title="Proven Accuracy, Real Results" kicker="Impact">
           <div className="grid md:grid-cols-4 gap-6">
             <Metric k="1M+" v="Images processed" />
