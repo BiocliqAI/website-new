@@ -6,9 +6,10 @@ type Props = {
   blurb: string
   tag: string
   href: string
+  highlights?: string[]
 }
 
-export default function TechCard({ title, blurb, tag, href }: Props) {
+export default function TechCard({ title, blurb, tag, href, highlights = [] }: Props) {
   const isInternal = href.startsWith('/')
 
   const external = href.startsWith('http')
@@ -38,7 +39,19 @@ export default function TechCard({ title, blurb, tag, href }: Props) {
           </a>
         )}
       </div>
-      <div className="h-36 bg-gradient-to-r from-cyan-500/10 via-fuchsia-500/10 to-transparent group-hover:via-fuchsia-500/20" />
+      <div className="bg-gradient-to-r from-cyan-500/10 via-fuchsia-500/10 to-transparent group-hover:via-fuchsia-500/20">
+        {highlights.length ? (
+          <div className="px-5 py-4 flex flex-wrap gap-2 text-xs text-cyan-100/80">
+            {highlights.map((item) => (
+              <span key={item} className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[0.7rem] uppercase tracking-tight">
+                {item}
+              </span>
+            ))}
+          </div>
+        ) : (
+          <div className="h-24" />
+        )}
+      </div>
     </article>
   )
 }

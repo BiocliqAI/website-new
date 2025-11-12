@@ -83,24 +83,28 @@ export default function LandingPage() {
               tag="Urology"
               blurb="Identifies and measures renal stones on non-contrast CT for faster decisions."
               href="mailto:info@biocliq.com?subject=Learn%20more%20about%20Urologiq"
+              highlights={["Stone insights", "Workflow speed", "AI QA"]}
             />
             <TechCard
               title="Corsight"
               tag="Cardiology"
               blurb="Detects and quantifies coronary calcium on non-gated CT with expert-level agreement."
               href="/corsight"
+              highlights={["CAC scoring", "90%+ sensitivity", "PACS ready"]}
             />
             <TechCard
               title="OneView"
               tag="Oncology"
               blurb="3D reconstruction for surgical planning — helps oncologists and surgeons operate with greater precision and confidence."
               href="mailto:info@biocliq.com?subject=Learn%20more%20about%20OneView"
+              highlights={["3D models", "Tumor mapping", "Confidence layers"]}
             />
             <TechCard
               title="Llama"
               tag="Vascular"
               blurb="Automated structured reporting of CTA Peripheral imaging."
               href="mailto:info@biocliq.com?subject=Learn%20more%20about%20Llama"
+              highlights={["PAD detection", "Structured reports", "Explainable AI"]}
             />
           </div>
         </Section>
