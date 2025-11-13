@@ -81,7 +81,7 @@ export default function LandingPage() {
             <TechCard
               title="Urologiq"
               tag="Urology"
-              blurb="Delivers smart reports that Urologists love!"
+              blurb="Delivers smart CT KUB reports that Urologists love!"
               href="mailto:info@biocliq.com?subject=Learn%20more%20about%20Urologiq"
             />
             <TechCard
