@@ -87,7 +87,7 @@ export default function LandingPage() {
             <TechCard
               title="Corsight"
               tag="Cardiology"
-              blurb="Coronary Calcium and Aneurysm detection on Non-Gated CT"
+              blurb="Complete heart assessment - CAC, Aneurysm, Cardiac Fat on Non-Gated CT. Why settle for less?"
               href="/corsight"
             />
             <TechCard
