@@ -90,6 +90,7 @@ export default function LandingPage() {
               tag="Cardiology"
               blurb="Complete heart assessment - CAC, Aneurysm, Cardiac Fat on Non-Gated CT. Why settle for less?"
               href="/corsight"
+              footer="98% sensitivity at 50% less radiation"
             />
             <TechCard
               title="OneView"
