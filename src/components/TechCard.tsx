@@ -41,7 +41,7 @@ export default function TechCard({ title, blurb, tag, href, footer }: Props) {
       </div>
       <div className="bg-gradient-to-r from-cyan-500/10 via-fuchsia-500/10 to-transparent group-hover:via-fuchsia-500/20">
         {footer ? (
-          <div className="px-5 py-4 text-xs text-cyan-100/90">{footer}</div>
+          <div className="px-5 py-4 text-sm md:text-base font-medium text-cyan-100/90">{footer}</div>
         ) : (
           <div className="h-24" />
         )}

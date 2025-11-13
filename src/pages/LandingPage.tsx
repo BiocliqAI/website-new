@@ -83,7 +83,7 @@ export default function LandingPage() {
               tag="Urology"
               blurb="Delivers smart CT KUB reports that Urologists love!"
               href="mailto:info@biocliq.com?subject=Learn%20more%20about%20Urologiq"
-              footer="!00,000+ patients diagnosed with 99% accuracy"
+              footer="100,000+ patients diagnosed with 99% accuracy"
             />
             <TechCard
               title="Corsight"
@@ -97,12 +97,14 @@ export default function LandingPage() {
               tag="Oncology"
               blurb="3D reconstruction for surgical planning — helps oncologists and surgeons operate with greater precision and confidence."
               href="mailto:info@biocliq.com?subject=Learn%20more%20about%20OneView"
+              footer="Surgeons report 30% better outcomes"
             />
             <TechCard
               title="Llama"
               tag="Vascular"
               blurb="Automated structured reporting of CTA Peripheral imaging."
               href="mailto:info@biocliq.com?subject=Learn%20more%20about%20Llama"
+              footer="Take the grunt work away and deliver the reports that vascular surgeons really want!"
             />
           </div>
         </Section>
