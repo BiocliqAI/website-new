@@ -6,9 +6,10 @@ type Props = {
   blurb: string
   tag: string
   href: string
+  footer?: string
 }
 
-export default function TechCard({ title, blurb, tag, href }: Props) {
+export default function TechCard({ title, blurb, tag, href, footer }: Props) {
   const isInternal = href.startsWith('/')
 
   const external = href.startsWith('http')
@@ -38,7 +39,13 @@ export default function TechCard({ title, blurb, tag, href }: Props) {
           </a>
         )}
       </div>
-      <div className="h-24 bg-gradient-to-r from-cyan-500/10 via-fuchsia-500/10 to-transparent group-hover:via-fuchsia-500/20" />
+      <div className="bg-gradient-to-r from-cyan-500/10 via-fuchsia-500/10 to-transparent group-hover:via-fuchsia-500/20">
+        {footer ? (
+          <div className="px-5 py-4 text-xs text-cyan-100/90">{footer}</div>
+        ) : (
+          <div className="h-24" />
+        )}
+      </div>
     </article>
   )
 }
