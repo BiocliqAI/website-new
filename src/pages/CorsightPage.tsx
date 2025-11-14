@@ -11,9 +11,21 @@ const problemPoints = [
 ]
 
 const solutionHighlights = [
-  'Low-dose, non-gated chest CT that can run on the vast majority of scanners already in service.',
-  'Cloud-native pipeline that integrates with existing PACS and RIS workflows.',
-  'Validated performance with 90%+ sensitivity and specificity across leading cardiac centers.'
+  {
+    title: 'Coronary artery calcium',
+    image: '/cac.png',
+    body: 'CAC is the earliest indicator of cardiovascular risk, enabling proactive intervention long before symptoms arise.'
+  },
+  {
+    title: 'Thoracic aortic aneurysm detection',
+    image: '/taa.png',
+    body: 'Corsight flags aortic aneurysms from routine non-gated CT, surfacing high-risk patients when it matters most.'
+  },
+  {
+    title: 'Cardiac fat quantification',
+    image: '/cf.png',
+    body: 'Cardiac fat levels correlate with adverse outcomes; Corsight tracks these biomarkers to inform comprehensive care.'
+  }
 ]
 
 const steps = [
@@ -28,33 +40,6 @@ const steps = [
   {
     title: '3. Report',
     detail: 'Clinicians receive structured results that inform prevention strategies in minutes.'
-  }
-]
-
-const comparison = [
-  {
-    feature: 'Cost-Effectiveness',
-    ours: 'Affordable non-gated protocol',
-    gated: 'High-cost, gated acquisition',
-    competitor: 'Premium pricing'
-  },
-  {
-    feature: 'Accessibility',
-    ours: 'Runs on widely deployed CT systems',
-    gated: 'Limited to tertiary hospitals',
-    competitor: 'Requires specialized imaging centers'
-  },
-  {
-    feature: 'Ease of Use',
-    ours: 'Simple workflow, minimal training',
-    gated: 'Needs dedicated technologists',
-    competitor: 'Moderate complexity'
-  },
-  {
-    feature: 'Efficiency',
-    ours: 'Rapid turnaround with automated outputs',
-    gated: 'Time-intensive acquisition + manual reads',
-    competitor: 'Longer queue times'
   }
 ]
 
@@ -99,9 +84,9 @@ export default function CorsightPage() {
             <Badge>Preventive Care</Badge>
           </div>
           <h1 className="text-3xl md:text-6xl font-semibold tracking-tight text-white max-w-3xl mx-auto">
-            Corsigight
+            Corsight
           </h1>
-          <p className="mt-6 max-w-2xl mx-auto text-slate-300 text-base md:text-lg">
+          <p className="mt-6 max-w-2xl mx-auto text-slate-100 text-lg md:text-2xl font-semibold">
             Get a comprehensive heart assessment with a low dose, non-gated CT.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
@@ -146,8 +131,12 @@ export default function CorsightPage() {
       <Section title="How Corsight solves it" kicker="Our solution">
         <div className="grid md:grid-cols-3 gap-6">
           {solutionHighlights.map((item) => (
-            <div key={item} className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-sm md:text-base text-slate-300">
-              {item}
+            <div key={item.title} className="rounded-2xl border border-white/10 bg-white/[0.03] overflow-hidden">
+              <img src={item.image} alt={item.title} className="w-full h-40 object-cover" />
+              <div className="p-5 space-y-3">
+                <h3 className="text-white font-semibold text-lg capitalize">{item.title}</h3>
+                <p className="text-sm md:text-base text-slate-300">{item.body}</p>
+              </div>
             </div>
           ))}
         </div>
