@@ -106,7 +106,7 @@ export default function CorsightPage() {
           </div>
           <div className="flex justify-center">
             <div className="w-full md:w-1/2 rounded-2xl border border-white/10 bg-white/[0.03] overflow-hidden">
-              <img src="/corsight-overview.png" alt="Corsight clinical overview" className="w-full h-full object-cover" />
+              <img src="/heart.png" alt="Corsight clinical overview" className="w-full h-full object-cover" />
             </div>
           </div>
         </div>
