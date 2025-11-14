@@ -4,12 +4,6 @@ import Section from '../components/Section'
 import GlowOrb from '../components/GlowOrb'
 import Badge from '../components/Badge'
 
-const problemPoints = [
-  'ECG-gated CT demands specialized equipment, extra time, and exposes patients to higher radiation.',
-  'Limited access to gated scanners restricts preventative screening programs.',
-  'Missed identification of at-risk patients delays intervention opportunities.'
-]
-
 const solutionHighlights = [
   {
     title: 'Coronary artery calcium',
@@ -100,14 +94,14 @@ export default function CorsightPage() {
         </Section>
       </div>
 
-      <Section kicker="Clinical context" title="Coronary Artery Calcification in focus">
+      <Section kicker="Clinical context" title="Heart health screening falls short">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div className="space-y-4 text-sm md:text-base text-slate-300">
             <p>
-              <strong>CAC is the earliest and most reliable indicator of cardiovascular risk.</strong> Accurate scoring enables cardiologists to stratify patients and act before adverse events.
+              Traditional screening leans on the CAC score alone, often requiring an expensive, high-radiation ECG-gated CT. That narrow lens leaves other critical risks unseen.
             </p>
             <p>
-              Corsight delivers structured reports across the four-tier CAC scale&mdash;from <em>No Risk</em> to <em>High Risk</em>&mdash;so clinicians can personalize interventions ranging from lifestyle changes to advanced therapies.
+              Providers need broader insight without forcing patients through specialized scanners or higher dose protocols.
             </p>
           </div>
           <div className="flex justify-center">
@@ -120,11 +114,15 @@ export default function CorsightPage() {
 
       <Section title="What holds cardiology back today?" kicker="The problem">
         <div className="grid md:grid-cols-3 gap-6">
-          {problemPoints.map((item) => (
-            <div key={item} className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-sm md:text-base text-slate-300">
-              {item}
-            </div>
-          ))}
+          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-sm md:text-base text-slate-300">
+            CAC-only programs miss silent aortic aneurysms and cardiac fat signals that drive adverse events.
+          </div>
+          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-sm md:text-base text-slate-300">
+            ECG-gated studies are costly, higher dose, and limited to tertiary centers—keeping broad screening out of reach.
+          </div>
+          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-sm md:text-base text-slate-300">
+            Clinicians lack a unified, affordable pathway to assess comprehensive heart health in a single visit.
+          </div>
         </div>
       </Section>
 
@@ -140,6 +138,9 @@ export default function CorsightPage() {
             </div>
           ))}
         </div>
+        <p className="mt-6 text-sm md:text-base text-slate-300 max-w-3xl">
+          Corsight delivers this broader assessment from a low-dose, affordable non-gated CT—bringing comprehensive heart health screening to everyday clinical settings.
+        </p>
       </Section>
 
       <Section id="workflow" title="Built for streamlined adoption" kicker="How it works">
