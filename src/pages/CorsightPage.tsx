@@ -99,10 +99,10 @@ export default function CorsightPage() {
             <Badge>Preventive Care</Badge>
           </div>
           <h1 className="text-3xl md:text-6xl font-semibold tracking-tight text-white max-w-3xl mx-auto">
-            Corsight™  coronary calcium scoring on non-gated CT
+            Corsigight
           </h1>
           <p className="mt-6 max-w-2xl mx-auto text-slate-300 text-base md:text-lg">
-            Revolutionizing rapid, affordable CAC scoring that plugs into routine Chest CT scans.
+            Get a comprehensive heart assessment with a low dose, non-gated CT.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <a href="mailto:info@biocliq.com?subject=Corsight%20demo" className="rounded-full px-5 py-2.5 bg-cyan-500 text-slate-900 font-medium hover:brightness-110 transition">
