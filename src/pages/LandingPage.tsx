@@ -17,14 +17,39 @@ export default function LandingPage() {
     ;['Urologiq', 'Corsight', 'OneView', 'Llama'].forEach((name) => {
       console.assert(text.includes(name), `[TEST] Missing product name in DOM: ${name}`)
     })
+
+    const mapHash = (hash: string) => (hash === '#tech' ? '#products' : hash)
+
+    const handleHashNavigation = () => {
+      const mapped = mapHash(window.location.hash)
+      if (mapped && mapped.startsWith('#')) {
+        const target = document.querySelector(mapped)
+        if (target) {
+          window.requestAnimationFrame(() => {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+          })
+        }
+      }
+    }
+
+    handleHashNavigation()
+    window.addEventListener('hashchange', handleHashNavigation)
+
+    return () => {
+      window.removeEventListener('hashchange', handleHashNavigation)
+    }
   }, [])
 
   const handleNavClick = (event: MouseEvent<HTMLAnchorElement>, selector: string) => {
     if (!selector.startsWith('#')) return
     event.preventDefault()
-    const target = document.querySelector(selector)
+    const mappedSelector = selector === '#tech' ? '#products' : selector
+    const target = document.querySelector(mappedSelector)
     if (target) {
       target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      if (selector !== mappedSelector) {
+        window.history.replaceState(null, '', mappedSelector)
+      }
     }
   }
 
