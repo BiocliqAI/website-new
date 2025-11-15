@@ -103,7 +103,7 @@ export default function LandingPage() {
               title="Llama"
               tag="Vascular"
               blurb="Automated structured reporting of CTA Peripheral imaging."
-              href="mailto:info@biocliq.com?subject=Learn%20more%20about%20Llama"
+              href="/llama"
               footer="Take the grunt work away and deliver the reports that vascular surgeons really want!"
             />
           </div>

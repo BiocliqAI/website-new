@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import LandingPage from './pages/LandingPage'
 import CorsightPage from './pages/CorsightPage'
+import LlamaPage from './pages/LlamaPage'
 
 export default function App() {
   return (
@@ -8,6 +9,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/corsight" element={<CorsightPage />} />
+        <Route path="/llama" element={<LlamaPage />} />
       </Routes>
     </BrowserRouter>
   )
