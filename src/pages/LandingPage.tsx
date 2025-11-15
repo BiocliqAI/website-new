@@ -110,7 +110,7 @@ export default function LandingPage() {
                   muted
                   loop
                   playsInline
-                  poster="/urologiq.png"
+                  poster="/backupposter.jpeg"
                 >
                   <source src="/aivideo.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
