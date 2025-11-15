@@ -130,17 +130,38 @@ export default function LandingPage() {
 
       <div className="relative" id="claims">
         <Section title="Clinician-backed proof points" kicker="Why teams trust Biocliq AI">
-          <div className="grid md:grid-cols-2 gap-4">
+          <div className="grid md:grid-cols-3 gap-4">
             {[
-              'Sharper clinical confidence: Biocliq AI interprets complex imaging with near-expert consistency, lifting diagnostic accuracy and outcomes.',
-              'Faster answers: Automated pipelines slash review times so clinicians can act while it still matters.',
-              'Tailored insights: Every study returns structured, patient-specific narratives aligned to the next best clinical move.',
-              'Built to grow: Modular architecture fits existing systems and scales effortlessly with expanding service lines.',
-              'Locked-down security: Enterprise-grade safeguards and regulatory alignment keep sensitive data protected end to end.',
-              'Team-ready workflows: Shared workspaces keep radiologists, surgeons, and administrators in sync around each case.'
-            ].map((claim) => (
-              <div key={claim} className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-sm md:text-base text-slate-200">
-                {claim}
+              {
+                icon: '🧠',
+                text: 'Sharper clinical confidence: Biocliq AI interprets complex imaging with near-expert consistency, lifting diagnostic accuracy and outcomes.'
+              },
+              {
+                icon: '⚡️',
+                text: 'Faster answers: Automated pipelines slash review times so clinicians can act while it still matters.'
+              },
+              {
+                icon: '📋',
+                text: 'Tailored insights: Every study returns structured, patient-specific narratives aligned to the next best clinical move.'
+              },
+              {
+                icon: '🧩',
+                text: 'Built to grow: Modular architecture fits existing systems and scales effortlessly with expanding service lines.'
+              },
+              {
+                icon: '🔒',
+                text: 'Locked-down security: Enterprise-grade safeguards and regulatory alignment keep sensitive data protected end to end.'
+              },
+              {
+                icon: '🤝',
+                text: 'Team-ready workflows: Shared workspaces keep radiologists, surgeons, and administrators in sync around each case.'
+              }
+            ].map(({ icon, text }) => (
+              <div key={text} className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-sm md:text-base text-slate-200 space-y-3">
+                <span className="text-3xl block" aria-hidden>
+                  {icon}
+                </span>
+                <p>{text}</p>
               </div>
             ))}
           </div>
