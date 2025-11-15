@@ -34,8 +34,8 @@ export default function LlamaPage() {
     <main className="min-h-screen bg-[#070b16] text-slate-200 antialiased selection:bg-cyan-300/30 selection:text-white">
       <header className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-[#070b16]/60 border-b border-white/10">
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6 md:px-8 h-16">
-          <Link to="/" className="text-white font-semibold tracking-tight">
-            Biocliq AI
+          <Link to="/" className="flex items-center gap-2 text-white font-semibold tracking-tight">
+            <img src="/logo.png" alt="Biocliq AI" className="h-8 w-auto" />
           </Link>
           <nav className="hidden md:flex items-center gap-6 text-sm">
             <Link to="/" className="text-slate-300 hover:text-white transition">
