@@ -84,7 +84,7 @@ export default function LandingPage() {
               title="Urologiq"
               tag="Urology"
               blurb="Delivers smart CT KUB reports that Urologists love!"
-              href="mailto:info@biocliq.com?subject=Learn%20more%20about%20Urologiq"
+              href="/urologiq"
               footer="100,000+ patients diagnosed with 99% accuracy"
             />
             <TechCard
