@@ -18,7 +18,13 @@ export default function LandingPage() {
       console.assert(text.includes(name), `[TEST] Missing product name in DOM: ${name}`)
     })
 
-    const mapHash = (hash: string) => (hash === '#tech' ? '#products' : hash)
+    const mapHash = (hash: string) => {
+      if (!hash) return hash
+      const normalized = hash.toLowerCase()
+      if (normalized === '#tech') return '#products'
+      if (normalized === '#/tech') return '#products'
+      return hash
+    }
 
     const handleHashNavigation = () => {
       const mapped = mapHash(window.location.hash)
@@ -43,7 +49,8 @@ export default function LandingPage() {
   const handleNavClick = (event: MouseEvent<HTMLAnchorElement>, selector: string) => {
     if (!selector.startsWith('#')) return
     event.preventDefault()
-    const mappedSelector = selector === '#tech' ? '#products' : selector
+    const normalizedSelector = selector.toLowerCase()
+    const mappedSelector = normalizedSelector === '#tech' || normalizedSelector === '#/tech' ? '#products' : selector
     const target = document.querySelector(mappedSelector)
     if (target) {
       target.scrollIntoView({ behavior: 'smooth', block: 'start' })
