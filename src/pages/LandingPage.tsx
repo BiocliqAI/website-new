@@ -132,10 +132,12 @@ export default function LandingPage() {
         <Section title="Clinician-backed proof points" kicker="Why teams trust Biocliq AI">
           <div className="grid md:grid-cols-2 gap-4">
             {[
-              '100,000+ patients have been diagnosed with 99% accuracy using Biocliq AI automation.',
-              '98% sensitivity with 50% less radiation in our coronary workflows, validated against expert panels.',
-              'Surgeons report 30% better outcomes when planning with Biocliq AI 3D reconstructions.',
-              'Lower-limb angiogram reporting time drops from hours to minutes thanks to LLAMA automation.'
+              'Sharper clinical confidence: Biocliq AI interprets complex imaging with near-expert consistency, lifting diagnostic accuracy and outcomes.',
+              'Faster answers: Automated pipelines slash review times so clinicians can act while it still matters.',
+              'Tailored insights: Every study returns structured, patient-specific narratives aligned to the next best clinical move.',
+              'Built to grow: Modular architecture fits existing systems and scales effortlessly with expanding service lines.',
+              'Locked-down security: Enterprise-grade safeguards and regulatory alignment keep sensitive data protected end to end.',
+              'Team-ready workflows: Shared workspaces keep radiologists, surgeons, and administrators in sync around each case.'
             ].map((claim) => (
               <div key={claim} className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-sm md:text-base text-slate-200">
                 {claim}
