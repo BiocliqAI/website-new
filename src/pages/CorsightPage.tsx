@@ -71,7 +71,7 @@ export default function CorsightPage() {
 
       <div className="relative py-16 md:py-24 overflow-hidden">
         <GlowOrb />
-        <Section id="overview" className="relative z-10 text-center py-10 md:py-14">
+        <Section id="overview" className="relative z-10 text-center py-6 md:py-8">
           <div className="flex justify-center gap-3 flex-wrap mb-6">
             <Badge>Cardiology</Badge>
             <Badge>AI-Powered CAC</Badge>
