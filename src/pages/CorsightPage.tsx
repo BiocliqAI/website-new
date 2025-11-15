@@ -71,7 +71,7 @@ export default function CorsightPage() {
 
       <div className="relative py-16 md:py-24 overflow-hidden">
         <GlowOrb />
-        <Section id="overview" className="relative z-10 text-center">
+        <Section id="overview" className="relative z-10 text-center py-10 md:py-14">
           <div className="flex justify-center gap-3 flex-wrap mb-6">
             <Badge>Cardiology</Badge>
             <Badge>AI-Powered CAC</Badge>
@@ -94,7 +94,7 @@ export default function CorsightPage() {
         </Section>
       </div>
 
-      <Section kicker="Clinical context" title="Heart health screening falls short">
+      <Section kicker="Clinical context" title="Heart health screening falls short" className="py-10 md:py-14">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div className="space-y-4 text-sm md:text-base text-slate-300">
             <p>
@@ -112,7 +112,7 @@ export default function CorsightPage() {
         </div>
       </Section>
 
-      <Section title="What holds cardiology back today?" kicker="The problem">
+      <Section title="What holds cardiology back today?" kicker="The problem" className="py-10 md:py-14">
         <div className="grid md:grid-cols-3 gap-6">
           <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-sm md:text-base text-slate-300">
             CAC-only programs miss silent aortic aneurysms and cardiac fat signals that drive adverse events.
@@ -126,7 +126,7 @@ export default function CorsightPage() {
         </div>
       </Section>
 
-      <Section title="How Corsight solves it" kicker="Our solution">
+      <Section title="How Corsight solves it" kicker="Our solution" className="py-10 md:py-14">
         <div className="grid md:grid-cols-3 gap-6">
           {solutionHighlights.map((item) => (
             <div key={item.title} className="rounded-2xl border border-white/10 bg-white/[0.03] overflow-hidden">
@@ -143,7 +143,7 @@ export default function CorsightPage() {
         </p>
       </Section>
 
-      <Section id="workflow" title="Built for streamlined adoption" kicker="How it works">
+      <Section id="workflow" title="Built for streamlined adoption" kicker="How it works" className="py-10 md:py-14">
         <div className="grid md:grid-cols-3 gap-6">
           {steps.map((step) => (
             <div key={step.title} className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
@@ -155,7 +155,7 @@ export default function CorsightPage() {
       </Section>
 
 
-      <Section id="validation" title="Clinically proven accuracy" kicker="Validation">
+      <Section id="validation" title="Clinically proven accuracy" kicker="Validation" className="py-10 md:py-14">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
             <h3 className="text-white font-semibold text-lg">90%+ sensitivity &amp; specificity</h3>
@@ -172,7 +172,7 @@ export default function CorsightPage() {
         </div>
       </Section>
 
-      <Section title="Partner with Biocliq to scale heart health" kicker="Let’s transform care together">
+      <Section title="Partner with Biocliq to scale heart health" kicker="Let’s transform care together" className="py-10 md:py-14">
         <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 md:p-8">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div>
