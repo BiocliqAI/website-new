@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Section from '../components/Section'
 import GlowOrb from '../components/GlowOrb'
@@ -20,11 +20,26 @@ const workflowSteps = [
 ]
 
 const capabilityHighlights = [
-  'Detects, locates, and quantifies stones across kidneys, ureters, and bladder.',
-  'Differentiates phleboliths and arterial calcifications from true ureteral stones.',
-  'Density-based stone composition guides shockwave, PCNL, or laser treatment decisions.',
-  'Interactive 3D visualization maps the calyceal system and stone volumes for first-time-right intervention.',
-  'Handles complex anatomies including horseshoe kidneys, dual ureters, staghorn calculi, and peri-stent stones.'
+  {
+    icon: '🛰️',
+    text: 'Detects, locates, and quantifies stones across kidneys, ureters, and bladder.'
+  },
+  {
+    icon: '🔍',
+    text: 'Differentiates phleboliths and arterial calcifications from true ureteral stones.'
+  },
+  {
+    icon: '🧪',
+    text: 'Density-based stone composition guides shockwave, PCNL, or laser treatment decisions.'
+  },
+  {
+    icon: '🧭',
+    text: 'Interactive 3D visualization maps the calyceal system and stone volumes for first-time-right intervention.'
+  },
+  {
+    icon: '🧬',
+    text: 'Handles complex anatomies including horseshoe kidneys, dual ureters, staghorn calculi, and peri-stent stones.'
+  }
 ]
 
 const complexCases = [
@@ -46,8 +61,18 @@ const complexCases = [
 ]
 
 export default function UrologiqPage() {
+  const [activeCase, setActiveCase] = useState(0)
+
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
+  }, [])
+
+  useEffect(() => {
+    const id = window.setInterval(() => {
+      setActiveCase((prev) => (prev + 1) % complexCases.length)
+    }, 6000)
+
+    return () => window.clearInterval(id)
   }, [])
 
   return (
@@ -122,9 +147,12 @@ export default function UrologiqPage() {
 
       <Section id="features" title="Everything urologists need, in one click" kicker="Capabilities">
         <div className="grid md:grid-cols-2 gap-6">
-          {capabilityHighlights.map((item) => (
-            <div key={item} className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-sm md:text-base text-slate-300">
-              {item}
+          {capabilityHighlights.map(({ icon, text }) => (
+            <div key={text} className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-sm md:text-base text-slate-300 space-y-3">
+              <span className="text-3xl block" aria-hidden>
+                {icon}
+              </span>
+              <p>{text}</p>
             </div>
           ))}
         </div>
@@ -159,18 +187,25 @@ export default function UrologiqPage() {
       </Section>
 
       <Section id="use-cases" title="Built for real-world anatomic challenges" kicker="Complex cases">
-        <div className="grid md:grid-cols-3 gap-6">
-          {complexCases.map((item) => (
-            <div key={item.title} className="rounded-2xl border border-white/10 bg-white/[0.03] overflow-hidden">
-              <div className="w-full h-56 bg-white/[0.05] flex items-center justify-center">
-                <img src={item.image} alt={item.title} className="max-h-full max-w-full object-contain" />
-              </div>
-              <div className="p-5 space-y-3">
-                <h3 className="text-white font-semibold text-lg">{item.title}</h3>
-                <p className="text-sm md:text-base text-slate-300">{item.description}</p>
-              </div>
+        <div className="rounded-2xl border border-white/10 bg-white/[0.03] overflow-hidden">
+          <div className="w-full h-64 bg-white/[0.05] flex items-center justify-center">
+            <img src={complexCases[activeCase].image} alt={complexCases[activeCase].title} className="max-h-full max-w-full object-contain" />
+          </div>
+          <div className="p-6 space-y-3 text-center md:text-left">
+            <h3 className="text-white font-semibold text-2xl">{complexCases[activeCase].title}</h3>
+            <p className="text-sm md:text-base text-slate-300">{complexCases[activeCase].description}</p>
+            <div className="flex justify-center md:justify-start gap-2 pt-2">
+              {complexCases.map((item, index) => (
+                <button
+                  key={item.title}
+                  type="button"
+                  onClick={() => setActiveCase(index)}
+                  className={`size-2.5 rounded-full transition ${index === activeCase ? 'bg-cyan-400' : 'bg-white/20 hover:bg-white/40'}`}
+                  aria-label={`Show ${item.title}`}
+                />
+              ))}
             </div>
-          ))}
+          </div>
         </div>
       </Section>
 
