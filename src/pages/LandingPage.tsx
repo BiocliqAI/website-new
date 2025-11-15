@@ -28,8 +28,8 @@ export default function LandingPage() {
   return (
     <main className="min-h-screen bg-[#070b16] text-slate-200 antialiased selection:bg-cyan-300/30 selection:text-white">
       <header className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-[#070b16]/60 border-b border-white/10">
-        <div className="max-w-7xl mx-auto flex items-center justify-between px-6 md:px-8 h-16">
-          <a href="#" className="flex items-center gap-2 text-white font-semibold tracking-tight">
+        <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 md:px-8 h-16">
+          <a href="#hero" className="flex items-center gap-2 text-white font-semibold tracking-tight">
             <img src="/logo.png" alt="Biocliq AI" className="h-8 w-auto" />
           </a>
           <nav className="hidden md:flex items-center gap-6 text-sm">
@@ -39,11 +39,24 @@ export default function LandingPage() {
               </a>
             ))}
           </nav>
-          <a href="mailto:info@biocliq.com" className="rounded-full px-4 py-1.5 bg-cyan-500 text-slate-900 text-sm font-medium hover:brightness-110 transition">
+          <a href="mailto:info@biocliq.com" className="hidden sm:inline-flex rounded-full px-4 py-1.5 bg-cyan-500 text-slate-900 text-sm font-medium hover:brightness-110 transition">
             Get in touch
           </a>
         </div>
       </header>
+
+      <div className="md:hidden border-b border-white/10 bg-[#070b16]/95 backdrop-blur">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex flex-wrap gap-3">
+          {navItems.map((n) => (
+            <a key={n.href} href={n.href} className="flex-1 min-w-[45%] rounded-xl border border-white/10 bg-white/[0.04] py-2 text-center text-sm text-slate-200">
+              {n.label}
+            </a>
+          ))}
+          <a href="mailto:info@biocliq.com" className="w-full rounded-xl border border-cyan-400/50 bg-cyan-500/10 py-2 text-center text-sm text-cyan-200">
+            Get in touch
+          </a>
+        </div>
+      </div>
 
       <div className="relative">
         <Section id="hero" className="pt-20 md:pt-28">
@@ -89,7 +102,7 @@ export default function LandingPage() {
 
       <div className="relative" id="products">
         <Section title="Our AI in Action" kicker="Products">
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid gap-6 sm:grid-cols-2">
             <TechCard
               title="Urologiq"
               tag="Urology"
@@ -124,7 +137,7 @@ export default function LandingPage() {
 
       <div className="relative" id="about-us">
         <Section title="Proven Accuracy, Real Results" kicker="Impact">
-          <div className="grid md:grid-cols-4 gap-6">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             <Metric k="1M+" v="Images processed" />
             <Metric k="99.2%" v="Expert agreement" />
             <Metric k="20+" v="Hospitals trust us" />
@@ -140,7 +153,7 @@ export default function LandingPage() {
 
       <div className="relative" id="claims">
         <Section title="Clinician-backed proof points" kicker="Why teams trust Biocliq AI">
-          <div className="grid md:grid-cols-3 gap-4">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {[
               {
                 icon: '🧠',
@@ -179,9 +192,9 @@ export default function LandingPage() {
       </div>
 
       <footer className="relative border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-6 md:px-8 py-10 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-10 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-slate-400 text-sm">© 2025 Biocliq AI. Building the intelligent healthcare future.</p>
-          <nav className="flex items-center gap-5 text-sm">
+          <nav className="flex flex-wrap items-center justify-center md:justify-end gap-3 md:gap-5 text-sm">
             {[{ href: '#intro', label: 'Mission' }, { href: '#products', label: 'Products' }, { href: '#about-us', label: 'About Us' }].map((n) => (
               <a key={n.href} href={n.href} className="text-slate-400 hover:text-white transition">
                 {n.label}
