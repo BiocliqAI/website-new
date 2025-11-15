@@ -55,6 +55,7 @@ export default function LandingPage() {
 
   const navItems = [
     { href: '#intro', label: 'Mission' },
+    { href: '#products', label: 'Products' },
     { href: '#about-us', label: 'About Us' }
   ]
 
@@ -65,7 +66,7 @@ export default function LandingPage() {
           <a href="#hero" className="flex items-center gap-2 text-white font-semibold tracking-tight">
             <img src="/logo.png" alt="Biocliq AI" className="h-8 w-auto" />
           </a>
-          <nav className="hidden md:flex items-center gap-6 text-sm">
+          <nav className="hidden sm:flex items-center gap-6 text-sm">
             {navItems.map((n) => (
               <a key={n.href} href={n.href} onClick={(event) => handleNavClick(event, n.href)} className="text-slate-300 hover:text-white transition">
                 {n.label}
@@ -77,19 +78,6 @@ export default function LandingPage() {
           </a>
         </div>
       </header>
-
-      <div className="md:hidden border-b border-white/10 bg-[#070b16]/95 backdrop-blur">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex flex-wrap gap-3">
-          {navItems.map((n) => (
-            <a key={n.href} href={n.href} onClick={(event) => handleNavClick(event, n.href)} className="flex-1 min-w-[45%] rounded-xl border border-white/10 bg-white/[0.04] py-2 text-center text-sm text-slate-200">
-              {n.label}
-            </a>
-          ))}
-          <a href="mailto:info@biocliq.com" className="w-full rounded-xl border border-cyan-400/50 bg-cyan-500/10 py-2 text-center text-sm text-cyan-200">
-            Get in touch
-          </a>
-        </div>
-      </div>
 
       <div className="relative">
         <Section id="hero" className="pt-20 md:pt-28">
