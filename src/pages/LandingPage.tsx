@@ -22,6 +22,7 @@ export default function LandingPage() {
   const navItems = [
     { href: '#intro', label: 'Mission' },
     { href: '#products', label: 'Products' },
+    { href: '#research', label: 'Research & Publications' },
     { href: '#about-us', label: 'About Us' }
   ]
 
@@ -135,6 +136,34 @@ export default function LandingPage() {
         </Section>
       </div>
 
+      <div className="relative" id="research">
+        <Section title="Research & Publications" kicker="Validation">
+          <div className="grid gap-6 md:grid-cols-2 items-center">
+            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 space-y-4">
+              <span className="text-3xl" aria-hidden>
+                ✅
+              </span>
+              <h3 className="text-white text-xl font-semibold">ISO 13485 Certified</h3>
+              <p className="text-sm md:text-base text-slate-300">
+                Our quality management system for medical devices is ISO 13485 compliant, ensuring rigor from data acquisition to clinical delivery.
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="relative mx-auto grid place-items-center w-36 h-36 rounded-full border-4 border-cyan-300/70 bg-gradient-to-br from-cyan-900/40 to-fuchsia-900/30 text-cyan-100 shadow-[0_0_25px_rgba(34,211,238,0.25)]">
+                <div className="absolute inset-3 rounded-full border border-cyan-200/40" />
+                <div className="relative flex flex-col items-center gap-1 uppercase tracking-[0.3em] text-[0.55rem] font-semibold">
+                  <span>CDSCO</span>
+                  <span className="text-[0.7rem] tracking-[0.25em]">Certified</span>
+                </div>
+              </div>
+              <p className="mt-4 text-sm md:text-base text-slate-300">
+                CDSCO seal of approval for safe, compliant deployment across Indian healthcare systems.
+              </p>
+            </div>
+          </div>
+        </Section>
+      </div>
+
       <div className="relative" id="about-us">
         <Section title="Proven Accuracy, Real Results" kicker="Impact">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -195,7 +224,7 @@ export default function LandingPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-10 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-slate-400 text-sm">© 2025 Biocliq AI. Building the intelligent healthcare future.</p>
           <nav className="flex flex-wrap items-center justify-center md:justify-end gap-3 md:gap-5 text-sm">
-            {[{ href: '#intro', label: 'Mission' }, { href: '#products', label: 'Products' }, { href: '#about-us', label: 'About Us' }].map((n) => (
+            {[{ href: '#intro', label: 'Mission' }, { href: '#products', label: 'Products' }, { href: '#research', label: 'Research & Publications' }, { href: '#about-us', label: 'About Us' }].map((n) => (
               <a key={n.href} href={n.href} className="text-slate-400 hover:text-white transition">
                 {n.label}
               </a>
