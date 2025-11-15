@@ -187,7 +187,7 @@ export default function UrologiqPage() {
       </Section>
 
       <Section id="use-cases" title="Built for real-world anatomic challenges" kicker="Complex cases">
-        <div className="rounded-2xl border border-white/10 bg-white/[0.03] overflow-hidden">
+        <div className="max-w-3xl mx-auto rounded-2xl border border-white/10 bg-white/[0.03] overflow-hidden">
           <div className="w-full h-64 bg-white/[0.05] flex items-center justify-center">
             <img src={complexCases[activeCase].image} alt={complexCases[activeCase].title} className="max-h-full max-w-full object-contain" />
           </div>
