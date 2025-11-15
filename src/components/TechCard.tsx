@@ -15,8 +15,8 @@ export default function TechCard({ title, blurb, tag, href, footer }: Props) {
   const external = href.startsWith('http')
 
   return (
-    <article className="group text-left w-full rounded-2xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.06] transition overflow-hidden" data-testid={`tech-card-${title}`}>
-      <div className="p-5 flex flex-col gap-4">
+    <article className="group text-left w-full rounded-2xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.06] transition overflow-hidden flex flex-col" data-testid={`tech-card-${title}`}>
+      <div className="p-5 flex flex-col gap-4 flex-1">
         <div className="flex items-start gap-4">
           <div className="mt-1 size-10 rounded-xl bg-gradient-to-br from-cyan-400/30 to-fuchsia-400/30 ring-1 ring-white/15" />
           <div className="flex-1">
@@ -27,21 +27,25 @@ export default function TechCard({ title, blurb, tag, href, footer }: Props) {
             <p className="mt-1 text-slate-300 text-sm md:text-base">{blurb}</p>
           </div>
         </div>
-        {isInternal ? (
-          <Link to={href} className="inline-flex items-center gap-2 text-sm font-medium text-cyan-300 hover:text-white transition">
-            Know more
-            <span aria-hidden>→</span>
-          </Link>
-        ) : (
-          <a href={href} className="inline-flex items-center gap-2 text-sm font-medium text-cyan-300 hover:text-white transition" target={external ? '_blank' : undefined} rel={external ? 'noreferrer' : undefined}>
-            Know more
-            <span aria-hidden>→</span>
-          </a>
-        )}
+        <div className="mt-auto">
+          {isInternal ? (
+            <Link to={href} className="inline-flex items-center gap-2 text-sm font-medium text-cyan-300 hover:text-white transition">
+              Know more
+              <span aria-hidden>→</span>
+            </Link>
+          ) : (
+            <a href={href} className="inline-flex items-center gap-2 text-sm font-medium text-cyan-300 hover:text-white transition" target={external ? '_blank' : undefined} rel={external ? 'noreferrer' : undefined}>
+              Know more
+              <span aria-hidden>→</span>
+            </a>
+          )}
+        </div>
       </div>
       <div className="bg-gradient-to-r from-cyan-500/10 via-fuchsia-500/10 to-transparent group-hover:via-fuchsia-500/20">
         {footer ? (
-          <div className="px-5 py-4 text-sm md:text-base font-medium text-cyan-100/90">{footer}</div>
+          <div className="px-5 py-4 text-sm md:text-base font-medium text-cyan-100/90 min-h-[4.5rem] flex items-center">
+            {footer}
+          </div>
         ) : (
           <div className="h-24" />
         )}
