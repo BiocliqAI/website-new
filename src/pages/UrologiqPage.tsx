@@ -162,7 +162,9 @@ export default function UrologiqPage() {
         <div className="grid md:grid-cols-3 gap-6">
           {complexCases.map((item) => (
             <div key={item.title} className="rounded-2xl border border-white/10 bg-white/[0.03] overflow-hidden">
-              <img src={item.image} alt={item.title} className="w-full h-48 object-cover" />
+              <div className="w-full h-56 bg-white/[0.05] flex items-center justify-center">
+                <img src={item.image} alt={item.title} className="max-h-full max-w-full object-contain" />
+              </div>
               <div className="p-5 space-y-3">
                 <h3 className="text-white font-semibold text-lg">{item.title}</h3>
                 <p className="text-sm md:text-base text-slate-300">{item.description}</p>
