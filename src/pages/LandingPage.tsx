@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, MouseEvent } from 'react'
 import Section from '../components/Section'
 import ReactiveMesh from '../components/ReactiveMesh'
 import Metric from '../components/Metric'
@@ -19,6 +19,15 @@ export default function LandingPage() {
     })
   }, [])
 
+  const handleNavClick = (event: MouseEvent<HTMLAnchorElement>, selector: string) => {
+    if (!selector.startsWith('#')) return
+    event.preventDefault()
+    const target = document.querySelector(selector)
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }
+
   const navItems = [
     { href: '#intro', label: 'Mission' },
     { href: '#products', label: 'Products' },
@@ -35,7 +44,7 @@ export default function LandingPage() {
           </a>
           <nav className="hidden md:flex items-center gap-6 text-sm">
             {navItems.map((n) => (
-              <a key={n.href} href={n.href} className="text-slate-300 hover:text-white transition">
+              <a key={n.href} href={n.href} onClick={(event) => handleNavClick(event, n.href)} className="text-slate-300 hover:text-white transition">
                 {n.label}
               </a>
             ))}
@@ -49,7 +58,7 @@ export default function LandingPage() {
       <div className="md:hidden border-b border-white/10 bg-[#070b16]/95 backdrop-blur">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex flex-wrap gap-3">
           {navItems.map((n) => (
-            <a key={n.href} href={n.href} className="flex-1 min-w-[45%] rounded-xl border border-white/10 bg-white/[0.04] py-2 text-center text-sm text-slate-200">
+            <a key={n.href} href={n.href} onClick={(event) => handleNavClick(event, n.href)} className="flex-1 min-w-[45%] rounded-xl border border-white/10 bg-white/[0.04] py-2 text-center text-sm text-slate-200">
               {n.label}
             </a>
           ))}
@@ -74,7 +83,7 @@ export default function LandingPage() {
                 Biocliq’s mission is to make advanced medical AI accessible to every healthcare system — improving diagnosis, personalizing treatment, and transforming the future of global health.
               </p>
               <div className="mt-6 flex gap-3">
-                <a href="#products" className="rounded-xl px-4 py-2 bg-white/10 hover:bg-white/15 border border-white/10">
+                <a href="#products" onClick={(event) => handleNavClick(event, '#products')} className="rounded-xl px-4 py-2 bg-white/10 hover:bg-white/15 border border-white/10">
                   Discover Our Solutions
                 </a>
                 <a href="#about-us" className="rounded-xl px-4 py-2 border border-white/10 hover:bg-white/10">
