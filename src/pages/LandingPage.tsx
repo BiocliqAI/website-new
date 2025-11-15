@@ -128,6 +128,23 @@ export default function LandingPage() {
         </Section>
       </div>
 
+      <div className="relative" id="claims">
+        <Section title="Clinician-backed proof points" kicker="Why teams trust Biocliq AI">
+          <div className="grid md:grid-cols-2 gap-4">
+            {[
+              '100,000+ patients have been diagnosed with 99% accuracy using Biocliq AI automation.',
+              '98% sensitivity with 50% less radiation in our coronary workflows, validated against expert panels.',
+              'Surgeons report 30% better outcomes when planning with Biocliq AI 3D reconstructions.',
+              'Lower-limb angiogram reporting time drops from hours to minutes thanks to LLAMA automation.'
+            ].map((claim) => (
+              <div key={claim} className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-sm md:text-base text-slate-200">
+                {claim}
+              </div>
+            ))}
+          </div>
+        </Section>
+      </div>
+
       <footer className="relative border-t border-white/10">
         <div className="max-w-7xl mx-auto px-6 md:px-8 py-10 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-slate-400 text-sm">© 2025 Biocliq AI. Building the intelligent healthcare future.</p>
