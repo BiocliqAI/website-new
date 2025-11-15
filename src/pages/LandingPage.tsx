@@ -69,8 +69,18 @@ export default function LandingPage() {
               </div>
             </div>
             <div className="rounded-2xl border border-white/10 p-3 bg-white/5">
-              <div className="aspect-video rounded-xl bg-gradient-to-br from-cyan-500/15 to-fuchsia-500/15 grid place-items-center">
-                <p className="text-slate-300 text-sm">(Video placeholder) AI analyzing CT/MRI</p>
+              <div className="aspect-video rounded-xl overflow-hidden">
+                <video
+                  className="w-full h-full object-cover"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  poster="/urologiq.png"
+                >
+                  <source src="/aivideo.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
               </div>
             </div>
           </div>
