@@ -55,8 +55,6 @@ export default function LandingPage() {
 
   const navItems = [
     { href: '#intro', label: 'Mission' },
-    { href: '#products', label: 'Products' },
-    { href: '#research', label: 'Research & Publications' },
     { href: '#about-us', label: 'About Us' }
   ]
 
@@ -171,7 +169,7 @@ export default function LandingPage() {
       </div>
 
       <div className="relative" id="research">
-        <Section title="Research & Publications" kicker="Validation">
+        <Section title="Certifications" kicker="Validation">
           <div className="grid gap-6 md:grid-cols-2 items-center">
             <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 space-y-4">
               <span className="text-3xl" aria-hidden>
@@ -258,7 +256,7 @@ export default function LandingPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-10 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-slate-400 text-sm">© 2025 Biocliq AI. Building the intelligent healthcare future.</p>
           <nav className="flex flex-wrap items-center justify-center md:justify-end gap-3 md:gap-5 text-sm">
-            {[{ href: '#intro', label: 'Mission' }, { href: '#products', label: 'Products' }, { href: '#research', label: 'Research & Publications' }, { href: '#about-us', label: 'About Us' }].map((n) => (
+            {[{ href: '#intro', label: 'Mission' }, { href: '#about-us', label: 'About Us' }].map((n) => (
               <a key={n.href} href={n.href} className="text-slate-400 hover:text-white transition">
                 {n.label}
               </a>
