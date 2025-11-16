@@ -7,7 +7,7 @@ export default function ReactiveMesh() {
   const y = useMotionValue(0)
   const rotateX = useTransform(y, [0, 600], [12, -12])
   const rotateY = useTransform(x, [0, 600], [-12, 12])
-  const glow = useMotionTemplate`radial-gradient(600px circle at ${x}px ${y}px, rgba(34,211,238,0.18), transparent 55%)`
+  const glow = useMotionTemplate`radial-gradient(600px circle at ${x}px ${y}px, rgba(34,211,238,0.28), transparent 55%)`
 
   const textVariants = {
     hidden: { opacity: 0, y: 18 },
@@ -31,7 +31,7 @@ export default function ReactiveMesh() {
     >
       <div className="absolute inset-0 overflow-hidden">
         <motion.video
-          className="w-full h-full object-cover opacity-70"
+          className="w-full h-full object-cover opacity-80"
           src="/hero1.mp4"
           autoPlay
           muted
@@ -44,14 +44,14 @@ export default function ReactiveMesh() {
         <motion.div
           className="absolute inset-0"
           animate={{ backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'] }}
-          transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
-          style={{ backgroundImage: 'linear-gradient(120deg, rgba(5,12,35,0.8) 0%, rgba(15,25,54,0.5) 35%, rgba(12,17,31,0.85) 70%)', backgroundSize: '200% 200%' }}
+          transition={{ duration: 24, repeat: Infinity, ease: 'linear' }}
+          style={{ backgroundImage: 'linear-gradient(120deg, rgba(5,12,35,0.55) 0%, rgba(15,25,54,0.35) 35%, rgba(12,17,31,0.7) 70%)', backgroundSize: '200% 200%' }}
         />
         <motion.div
           className="absolute inset-0 mix-blend-screen"
-          animate={{ opacity: [0.35, 0.6, 0.35], rotate: [0, 3, -3, 0] }}
-          transition={{ duration: 16, repeat: Infinity, ease: 'easeInOut' }}
-          style={{ backgroundImage: 'radial-gradient(circle at 20% 20%, rgba(6,182,212,0.35), transparent 55%), radial-gradient(circle at 80% 30%, rgba(217,70,239,0.25), transparent 55%)' }}
+          animate={{ opacity: [0.4, 0.75, 0.4], rotate: [0, 4, -4, 0] }}
+          transition={{ duration: 14, repeat: Infinity, ease: 'easeInOut' }}
+          style={{ backgroundImage: 'radial-gradient(circle at 20% 20%, rgba(6,182,212,0.45), transparent 55%), radial-gradient(circle at 80% 30%, rgba(217,70,239,0.35), transparent 55%)' }}
         />
       </div>
       <GlowOrb />
@@ -69,6 +69,16 @@ export default function ReactiveMesh() {
         <div className="relative size-52 md:size-72 rounded-full bg-gradient-to-tr from-cyan-400/30 via-fuchsia-400/20 to-transparent blur-2xl" />
       </motion.div>
       <motion.div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6" variants={textContainer} initial="hidden" animate="visible">
+        <motion.div className="mb-6" variants={textVariants}>
+          <motion.video
+            src="/logoanim.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="mx-auto h-16 w-auto md:h-20 drop-shadow-[0_10px_35px_rgba(29,209,255,0.45)]"
+          />
+        </motion.div>
         <motion.div className="mb-4 flex gap-2 flex-wrap justify-center" variants={textVariants}>
           <Badge>Agentic AI</Badge>
           <Badge>Medical Imaging</Badge>
