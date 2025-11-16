@@ -71,7 +71,7 @@ export default function LandingPage() {
       <header className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-[#070b16]/60 border-b border-white/10">
         <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 md:px-8 h-16">
           <a href="#hero" className="flex items-center gap-2 text-white font-semibold tracking-tight">
-            <img src="/logo.png" alt="Biocliq AI" className="h-8 w-auto" />
+            <img src="/3dlogo.png" alt="Biocliq AI" className="h-9 w-auto" />
           </a>
           <nav className="hidden sm:flex items-center gap-6 text-sm">
             {navItems.map((n) => (

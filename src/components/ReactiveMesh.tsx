@@ -32,7 +32,7 @@ export default function ReactiveMesh() {
       <div className="absolute inset-0 overflow-hidden">
         <motion.video
           className="w-full h-full object-cover opacity-70"
-          src="/aivideo.mp4"
+          src="/hero1.mp4"
           autoPlay
           muted
           loop
@@ -69,6 +69,16 @@ export default function ReactiveMesh() {
         <div className="relative size-52 md:size-72 rounded-full bg-gradient-to-tr from-cyan-400/30 via-fuchsia-400/20 to-transparent blur-2xl" />
       </motion.div>
       <motion.div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6" variants={textContainer} initial="hidden" animate="visible">
+        <motion.div className="mb-6" variants={textVariants}>
+          <motion.video
+            src="/3dlogo.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="mx-auto h-16 w-auto md:h-20 drop-shadow-[0_8px_24px_rgba(13,206,235,0.35)]"
+          />
+        </motion.div>
         <motion.div className="mb-4 flex gap-2 flex-wrap justify-center" variants={textVariants}>
           <Badge>Agentic AI</Badge>
           <Badge>Medical Imaging</Badge>
