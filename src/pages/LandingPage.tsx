@@ -1,11 +1,26 @@
-import { useEffect, MouseEvent } from 'react'
+import { useEffect, MouseEvent, useState } from 'react'
 import Section from '../components/Section'
 import ReactiveMesh from '../components/ReactiveMesh'
 import Metric from '../components/Metric'
 import TechCard from '../components/TechCard'
 import GlowOrb from '../components/GlowOrb'
+import MobileMenu from '../components/MobileMenu'
+import { Bars3Icon } from '@heroicons/react/24/outline'
 
 export default function LandingPage() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 640) // Tailwind's 'sm' breakpoint
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 640)
+    }
+
+    window.addEventListener('resize', handleResize)
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
   useEffect(() => {
     const mains = document.querySelectorAll('main')
     console.assert(mains.length === 1, `[TEST] Expected 1 <main>, found ${mains.length}`)
@@ -80,6 +95,14 @@ export default function LandingPage() {
               </a>
             ))}
           </nav>
+          <button
+            type="button"
+            className="-m-2 inline-flex items-center justify-center rounded-md p-2 text-slate-400 sm:hidden"
+            onClick={() => setMobileMenuOpen(true)}
+          >
+            <span className="sr-only">Open main menu</span>
+            <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+          </button>
           <a href="mailto:info@biocliq.com" className="hidden sm:inline-flex rounded-full px-4 py-1.5 bg-cyan-500 text-slate-900 text-sm font-medium hover:brightness-110 transition">
             Get in touch
           </a>
@@ -88,12 +111,12 @@ export default function LandingPage() {
 
       <div className="relative">
         <Section id="hero" className="pt-20 md:pt-28">
-          <ReactiveMesh />
+          {!isMobile && <ReactiveMesh />}
         </Section>
       </div>
 
       <div className="relative">
-        <GlowOrb />
+        {!isMobile && <GlowOrb />}
         <Section id="intro" kicker="Our mission">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
@@ -256,6 +279,12 @@ export default function LandingPage() {
           </nav>
         </div>
       </footer>
+      <MobileMenu
+        isOpen={mobileMenuOpen}
+        onClose={() => setMobileMenuOpen(false)}
+        navItems={navItems}
+        handleNavClick={handleNavClick}
+      />
     </main>
   )
 }
