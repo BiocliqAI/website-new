@@ -111,12 +111,12 @@ export default function LandingPage() {
 
       <div className="relative">
         <Section id="hero" className="pt-20 md:pt-28">
-          {!isMobile && <ReactiveMesh />}
+          <ReactiveMesh />
         </Section>
       </div>
 
       <div className="relative">
-        {!isMobile && <GlowOrb />}
+        <GlowOrb />
         <Section id="intro" kicker="Our mission">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
