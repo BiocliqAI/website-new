@@ -78,7 +78,7 @@ export default function ReactiveMesh() {
           Biocliq AI
         </motion.h1>
         <motion.p className="mt-4 max-w-2xl text-sm md:text-lg text-slate-300" variants={textVariants}>
-          At the frontier of medical intelligence — AI that reasons with CT/MRI to amplify clinical expertise.
+          At the frontier of medical intelligence — AI that amplifies clinical expertise.
         </motion.p>
       </motion.div>
     </motion.div>
