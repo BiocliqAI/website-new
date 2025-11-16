@@ -130,6 +130,7 @@ export default function LandingPage() {
               blurb="Delivers smart CT KUB reports that Urologists love!"
               href="/urologiq"
               footer="100,000+ patients diagnosed with 99% accuracy"
+              logo="/kub.png"
             />
             <TechCard
               title="Corsight"
@@ -137,6 +138,7 @@ export default function LandingPage() {
               blurb="Complete heart assessment - CAC, Aneurysm, Cardiac Fat on Non-Gated CT. Why settle for less?"
               href="/corsight"
               footer="98% sensitivity at 50% less radiation"
+              logo="/corsight.png"
             />
             <TechCard
               title="OneView"
@@ -144,6 +146,7 @@ export default function LandingPage() {
               blurb="3D reconstruction for surgical planning — helps oncologists and surgeons operate with greater precision and confidence."
               href="mailto:info@biocliq.com?subject=Learn%20more%20about%20OneView"
               footer="Surgeons report 30% better outcomes"
+              logo="/ov.png"
             />
             <TechCard
               title="Llama"
@@ -151,6 +154,7 @@ export default function LandingPage() {
               blurb="Automated structured reporting of CTA Peripheral imaging."
               href="/llama"
               footer="Take the grunt work away and deliver the reports that vascular surgeons really want!"
+              logo="/llama.png"
             />
           </div>
         </Section>

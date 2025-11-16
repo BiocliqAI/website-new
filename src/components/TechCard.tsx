@@ -7,9 +7,10 @@ type Props = {
   tag: string
   href: string
   footer?: string
+  logo?: string
 }
 
-export default function TechCard({ title, blurb, tag, href, footer }: Props) {
+export default function TechCard({ title, blurb, tag, href, footer, logo }: Props) {
   const isInternal = href.startsWith('/')
   const external = href.startsWith('http')
 
@@ -34,7 +35,11 @@ export default function TechCard({ title, blurb, tag, href, footer }: Props) {
     <CardWrapper>
       <div className="p-5 flex flex-col gap-4 flex-1">
         <div className="flex items-start gap-4">
-          <div className="mt-1 size-10 rounded-xl bg-gradient-to-br from-cyan-400/30 to-fuchsia-400/30 ring-1 ring-white/15" />
+          {logo ? (
+            <img src={logo} alt={`${title} logo`} className="mt-1 h-10 w-10 rounded-xl border border-white/10 bg-white/5 object-contain p-1" />
+          ) : (
+            <div className="mt-1 size-10 rounded-xl bg-gradient-to-br from-cyan-400/30 to-fuchsia-400/30 ring-1 ring-white/15" />
+          )}
           <div className="flex-1">
             <div className="flex items-center gap-2 mb-1">
               <Badge>{tag}</Badge>
