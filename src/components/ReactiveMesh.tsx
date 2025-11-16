@@ -69,18 +69,6 @@ export default function ReactiveMesh() {
         <div className="relative size-52 md:size-72 rounded-full bg-gradient-to-tr from-cyan-400/30 via-fuchsia-400/20 to-transparent blur-2xl" />
       </motion.div>
       <motion.div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6" variants={textContainer} initial="hidden" animate="visible">
-        <motion.div className="relative mb-6" variants={textVariants}>
-          <div className="pointer-events-none absolute inset-0 rounded-full bg-cyan-500/20 blur-3xl opacity-40" />
-          <motion.video
-            src="/logoanim.mp4"
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="relative mx-auto h-16 w-auto md:h-20"
-            style={{ mixBlendMode: 'screen' }}
-          />
-        </motion.div>
         <motion.div className="mb-4 flex gap-2 flex-wrap justify-center" variants={textVariants}>
           <Badge>Agentic AI</Badge>
           <Badge>Medical Imaging</Badge>
