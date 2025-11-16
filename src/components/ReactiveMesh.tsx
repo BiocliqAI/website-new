@@ -29,18 +29,31 @@ export default function ReactiveMesh() {
       style={{ backgroundImage: glow as any }}
       className="relative aspect-[16/10] sm:aspect-[2/1] w-full rounded-3xl border border-white/10 bg-[#0d111f] overflow-hidden"
     >
-      <motion.div
-        className="absolute inset-0"
-        animate={{ backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'] }}
-        transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
-        style={{ backgroundImage: 'linear-gradient(120deg, rgba(34,211,238,0.18) 0%, rgba(167,139,250,0.2) 35%, rgba(13,17,31,0.1) 70%)', backgroundSize: '200% 200%' }}
-      />
-      <motion.div
-        className="absolute inset-0 mix-blend-screen"
-        animate={{ opacity: [0.35, 0.6, 0.35], rotate: [0, 3, -3, 0] }}
-        transition={{ duration: 16, repeat: Infinity, ease: 'easeInOut' }}
-        style={{ backgroundImage: 'radial-gradient(circle at 20% 20%, rgba(6,182,212,0.35), transparent 55%), radial-gradient(circle at 80% 30%, rgba(217,70,239,0.25), transparent 55%)' }}
-      />
+      <div className="absolute inset-0 overflow-hidden">
+        <motion.video
+          className="w-full h-full object-cover opacity-70"
+          src="/aivideo.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          initial={{ scale: 1.15 }}
+          animate={{ scale: [1.15, 1.07, 1.15] }}
+          transition={{ duration: 20, repeat: Infinity, ease: 'easeInOut' }}
+        />
+        <motion.div
+          className="absolute inset-0"
+          animate={{ backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'] }}
+          transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
+          style={{ backgroundImage: 'linear-gradient(120deg, rgba(5,12,35,0.8) 0%, rgba(15,25,54,0.5) 35%, rgba(12,17,31,0.85) 70%)', backgroundSize: '200% 200%' }}
+        />
+        <motion.div
+          className="absolute inset-0 mix-blend-screen"
+          animate={{ opacity: [0.35, 0.6, 0.35], rotate: [0, 3, -3, 0] }}
+          transition={{ duration: 16, repeat: Infinity, ease: 'easeInOut' }}
+          style={{ backgroundImage: 'radial-gradient(circle at 20% 20%, rgba(6,182,212,0.35), transparent 55%), radial-gradient(circle at 80% 30%, rgba(217,70,239,0.25), transparent 55%)' }}
+        />
+      </div>
       <GlowOrb />
       <motion.div style={{ rotateX, rotateY }} className="absolute inset-0 grid grid-cols-12 opacity-60">
         {Array.from({ length: 96 }).map((_, i) => (
