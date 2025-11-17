@@ -167,7 +167,7 @@ export default function LandingPage() {
               title="OneView"
               tag="Oncology"
               blurb="3D reconstruction for surgical planning — helps oncologists and surgeons operate with greater precision and confidence."
-              href="mailto:info@biocliq.com?subject=Learn%20more%20about%20OneView"
+              href="/oneview"
               footer="Surgeons report 30% better outcomes"
               logo="/ov.png"
             />
