@@ -85,12 +85,24 @@ export default function LandingPage() {
     <main className="min-h-screen bg-[#070b16] text-slate-200 antialiased selection:bg-cyan-300/30 selection:text-white">
       <header className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-[#070b16]/60 border-b border-white/10">
         <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 md:px-8 h-20 md:h-24">
-          <a href="#hero" className="flex items-center gap-3 text-white font-semibold tracking-tight">
-            <img src="/3dlogo.png" alt="Biocliq AI" className="h-12 w-auto md:h-16" />
+          <a
+            href="#hero"
+            className="flex items-center gap-3 text-white font-semibold tracking-tight"
+          >
+            <img
+              src="/3dlogo.png"
+              alt="Biocliq AI"
+              className="h-12 w-auto md:h-16"
+            />
           </a>
           <nav className="hidden sm:flex items-center gap-6 text-sm">
             {navItems.map((n) => (
-              <a key={n.href} href={n.href} onClick={(event) => handleNavClick(event, n.href)} className="text-slate-300 hover:text-white transition">
+              <a
+                key={n.href}
+                href={n.href}
+                onClick={(event) => handleNavClick(event, n.href)}
+                className="text-slate-300 hover:text-white transition"
+              >
                 {n.label}
               </a>
             ))}
@@ -103,7 +115,10 @@ export default function LandingPage() {
             <span className="sr-only">Open main menu</span>
             <Bars3Icon className="h-6 w-6" aria-hidden="true" />
           </button>
-          <a href="mailto:info@biocliq.com" className="hidden sm:inline-flex rounded-full px-4 py-1.5 bg-cyan-500 text-slate-900 text-sm font-medium hover:brightness-110 transition">
+          <a
+            href="mailto:info@biocliq.com"
+            className="hidden sm:inline-flex rounded-full px-4 py-1.5 bg-cyan-500 text-slate-900 text-sm font-medium hover:brightness-110 transition"
+          >
             Get in touch
           </a>
         </div>
@@ -121,7 +136,9 @@ export default function LandingPage() {
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <p className="text-lg text-slate-300 leading-relaxed">
-                Biocliq’s mission is to make advanced medical AI accessible to every healthcare system — improving diagnosis, personalizing treatment, and transforming the future of global health.
+                Biocliq’s mission is to make advanced medical AI accessible to
+                every healthcare system — improving diagnosis, personalizing
+                treatment, and transforming the future of global health.
               </p>
               <div className="mt-6" />
             </div>
@@ -167,7 +184,7 @@ export default function LandingPage() {
               title="OneView"
               tag="Oncology"
               blurb="3D reconstruction for surgical planning — helps oncologists and surgeons operate with greater precision and confidence."
-              href="/oneview"
+              href="https://onevieweb.biocliq.ai/"
               footer="Surgeons report 30% better outcomes"
               logo="/ov.png"
             />
@@ -190,9 +207,13 @@ export default function LandingPage() {
               <span className="text-3xl" aria-hidden>
                 ✅
               </span>
-              <h3 className="text-white text-xl font-semibold">ISO 13485 Certified</h3>
+              <h3 className="text-white text-xl font-semibold">
+                ISO 13485 Certified
+              </h3>
               <p className="text-sm md:text-base text-slate-300">
-                Our quality management system for medical devices is ISO 13485 compliant, ensuring rigor from data acquisition to clinical delivery.
+                Our quality management system for medical devices is ISO 13485
+                compliant, ensuring rigor from data acquisition to clinical
+                delivery.
               </p>
             </div>
             <div className="text-center">
@@ -200,11 +221,14 @@ export default function LandingPage() {
                 <div className="absolute inset-3 rounded-full border border-cyan-200/40" />
                 <div className="relative flex flex-col items-center gap-1 uppercase tracking-[0.3em] text-[0.55rem] font-semibold">
                   <span>CDSCO</span>
-                  <span className="text-[0.7rem] tracking-[0.25em]">Certified</span>
+                  <span className="text-[0.7rem] tracking-[0.25em]">
+                    Certified
+                  </span>
                 </div>
               </div>
               <p className="mt-4 text-sm md:text-base text-slate-300">
-                CDSCO seal of approval for safe, compliant deployment across Indian healthcare systems.
+                CDSCO seal of approval for safe, compliant deployment across
+                Indian healthcare systems.
               </p>
             </div>
           </div>
@@ -221,42 +245,52 @@ export default function LandingPage() {
           </div>
           <div className="mt-8 rounded-2xl border border-white/10 bg-white/[0.03] p-6">
             <p className="text-sm md:text-base text-slate-300">
-              “Biocliq’s models streamlined our workflow and improved consistency.” — <span className="text-white">Chief of Radiology, Partner Hospital</span>
+              “Biocliq’s models streamlined our workflow and improved
+              consistency.” —{" "}
+              <span className="text-white">
+                Chief of Radiology, Partner Hospital
+              </span>
             </p>
           </div>
         </Section>
       </div>
 
       <div className="relative" id="claims">
-        <Section title="Clinician-backed proof points" kicker="Why teams trust Biocliq AI">
+        <Section
+          title="Clinician-backed proof points"
+          kicker="Why teams trust Biocliq AI"
+        >
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {[
               {
-                icon: '🧠',
-                text: 'Sharper clinical confidence: Biocliq AI interprets complex imaging with near-expert consistency, lifting diagnostic accuracy and outcomes.'
+                icon: "🧠",
+                text: "Sharper clinical confidence: Biocliq AI interprets complex imaging with near-expert consistency, lifting diagnostic accuracy and outcomes.",
               },
               {
-                icon: '⚡️',
-                text: 'Faster answers: Automated pipelines slash review times so clinicians can act while it still matters.'
+                icon: "⚡️",
+                text: "Faster answers: Automated pipelines slash review times so clinicians can act while it still matters.",
               },
               {
-                icon: '📋',
-                text: 'Tailored insights: Every study returns structured, patient-specific narratives aligned to the next best clinical move.'
+                icon: "📋",
+                text: "Tailored insights: Every study returns structured, patient-specific narratives aligned to the next best clinical move.",
               },
               {
-                icon: '🧩',
-                text: 'Built to grow: Modular architecture fits existing systems and scales effortlessly with expanding service lines.'
+                icon: "🧩",
+                text: "Built to grow: Modular architecture fits existing systems and scales effortlessly with expanding service lines.",
               },
               {
-                icon: '🔒',
-                text: 'Locked-down security: Enterprise-grade safeguards and regulatory alignment keep sensitive data protected end to end.'
+                icon: "🔒",
+                text: "Locked-down security: Enterprise-grade safeguards and regulatory alignment keep sensitive data protected end to end.",
               },
               {
-                icon: '🤝',
-                text: 'Team-ready workflows: Shared workspaces keep radiologists, surgeons, and administrators in sync around each case.'
-              }
+                icon: "🤝",
+                text: "Team-ready workflows: Shared workspaces keep radiologists, surgeons, and administrators in sync around each case.",
+              },
             ].map(({ icon, text }) => (
-              <div key={text} className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-sm md:text-base text-slate-200 space-y-3">
+              <div
+                key={text}
+                className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-sm md:text-base text-slate-200 space-y-3"
+              >
                 <span className="text-3xl block" aria-hidden>
                   {icon}
                 </span>
@@ -269,10 +303,19 @@ export default function LandingPage() {
 
       <footer className="relative border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-10 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-slate-400 text-sm">© 2025 Biocliq AI. Building the intelligent healthcare future.</p>
+          <p className="text-slate-400 text-sm">
+            © 2025 Biocliq AI. Building the intelligent healthcare future.
+          </p>
           <nav className="flex flex-wrap items-center justify-center md:justify-end gap-3 md:gap-5 text-sm">
-            {[{ href: '#intro', label: 'Mission' }, { href: '#about-us', label: 'About Us' }].map((n) => (
-              <a key={n.href} href={n.href} className="text-slate-400 hover:text-white transition">
+            {[
+              { href: "#intro", label: "Mission" },
+              { href: "#about-us", label: "About Us" },
+            ].map((n) => (
+              <a
+                key={n.href}
+                href={n.href}
+                className="text-slate-400 hover:text-white transition"
+              >
                 {n.label}
               </a>
             ))}
@@ -286,5 +329,5 @@ export default function LandingPage() {
         handleNavClick={handleNavClick}
       />
     </main>
-  )
+  );
 }
