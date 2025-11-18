@@ -90,7 +90,7 @@ export default function LandingPage() {
             className="flex items-center gap-3 text-white font-semibold tracking-tight"
           >
             <img
-              src="/3dlogo.png"
+              src="/logo.png"
               alt="Biocliq AI"
               className="h-12 w-auto md:h-16"
             />
