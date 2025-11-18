@@ -37,7 +37,7 @@ const steps = [
   }
 ]
 
-export default function CorsightPage() {
+export default function CorsightPage({ openContactForm }: { openContactForm: () => void }) {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }, [])
@@ -47,7 +47,7 @@ export default function CorsightPage() {
       <header className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-[#070b16]/60 border-b border-white/10">
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6 md:px-8 h-16">
           <Link to="/" className="flex items-center gap-2 text-white font-semibold tracking-tight">
-            <img src="/logo.png" alt="Biocliq AI" className="h-8 w-auto" />
+            <img src="/logo.png" alt="Biocliq AI" className="h-16 w-auto" />
           </Link>
           <nav className="hidden md:flex items-center gap-6 text-sm">
             <Link to="/" className="text-slate-300 hover:text-white transition">
@@ -63,9 +63,9 @@ export default function CorsightPage() {
               Validation
             </a>
           </nav>
-          <a href="mailto:info@biocliq.com?subject=Connect%20about%20Corsight" className="rounded-full px-4 py-1.5 bg-cyan-500 text-slate-900 text-sm font-medium hover:brightness-110 transition">
+          <button onClick={openContactForm} className="rounded-full px-4 py-1.5 bg-cyan-500 text-slate-900 text-sm font-medium hover:brightness-110 transition">
             Talk to us
-          </a>
+          </button>
         </div>
       </header>
 
@@ -84,9 +84,9 @@ export default function CorsightPage() {
             Get a comprehensive heart assessment with a low dose, non-gated CT.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <a href="mailto:info@biocliq.com?subject=Corsight%20demo" className="rounded-full px-5 py-2.5 bg-cyan-500 text-slate-900 font-medium hover:brightness-110 transition">
+            <button onClick={openContactForm} className="rounded-full px-5 py-2.5 bg-cyan-500 text-slate-900 font-medium hover:brightness-110 transition">
               Request a demo
-            </a>
+            </button>
             <Link to="/" className="rounded-full px-5 py-2.5 border border-white/15 text-white hover:bg-white/10 transition">
               Back to home
             </Link>
@@ -178,13 +178,13 @@ export default function CorsightPage() {
             <div>
               <h3 className="text-white font-semibold text-xl">Ready to pilot Corsight?</h3>
               <p className="mt-2 text-slate-300 text-sm md:text-base">
-                Call us at <a href="tel:+919731121919" className="text-cyan-300 hover:text-white transition">+91-9731121919</a> or email <a href="mailto:info@biocliq.com" className="text-cyan-300 hover:text-white transition">info@biocliq.com</a> to start a conversation.
+                Call us at <a href="tel:+919731121919" className="text-cyan-300 hover:text-white transition">+91-9731121919</a> or email <button onClick={openContactForm} className="text-cyan-300 hover:text-white transition">info@biocliq.com</button> to start a conversation.
               </p>
             </div>
             <div className="flex flex-wrap gap-3">
-              <a href="mailto:info@biocliq.com?subject=Start%20a%20Corsight%20pilot" className="rounded-full px-5 py-2.5 bg-cyan-500 text-slate-900 font-medium hover:brightness-110 transition">
+              <button onClick={openContactForm} className="rounded-full px-5 py-2.5 bg-cyan-500 text-slate-900 font-medium hover:brightness-110 transition">
                 Schedule a briefing
-              </a>
+              </button>
               <Link to="/" className="rounded-full px-5 py-2.5 border border-white/15 text-white hover:bg-white/10 transition">
                 Explore other solutions
               </Link>

@@ -60,7 +60,7 @@ const complexCases = [
   }
 ]
 
-export default function UrologiqPage() {
+export default function UrologiqPage({ openContactForm }: { openContactForm: () => void }) {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }, [])
@@ -70,7 +70,7 @@ export default function UrologiqPage() {
       <header className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-[#070b16]/60 border-b border-white/10">
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6 md:px-8 h-16">
           <Link to="/" className="flex items-center gap-2 text-white font-semibold tracking-tight">
-            <img src="/logo.png" alt="Biocliq AI" className="h-8 w-auto" />
+            <img src="/logo.png" alt="Biocliq AI" className="h-16 w-auto" />
           </Link>
           <nav className="hidden md:flex items-center gap-6 text-sm">
             <Link to="/" className="text-slate-300 hover:text-white transition">
@@ -86,9 +86,9 @@ export default function UrologiqPage() {
               Use cases
             </a>
           </nav>
-          <a href="mailto:info@biocliq.com?subject=Connect%20about%20Urologiq" className="rounded-full px-4 py-1.5 bg-cyan-500 text-slate-900 text-sm font-medium hover:brightness-110 transition">
+          <button onClick={openContactForm} className="rounded-full px-4 py-1.5 bg-cyan-500 text-slate-900 text-sm font-medium hover:brightness-110 transition">
             Talk to us
-          </a>
+          </button>
         </div>
       </header>
 
@@ -107,9 +107,9 @@ export default function UrologiqPage() {
             Detect, quantify, and visualize urinary tract stones with automated reports that urologists love.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <a href="mailto:info@biocliq.com?subject=Urologiq%20demo" className="rounded-full px-5 py-2.5 bg-cyan-500 text-slate-900 font-medium hover:brightness-110 transition">
+            <button onClick={openContactForm} className="rounded-full px-5 py-2.5 bg-cyan-500 text-slate-900 font-medium hover:brightness-110 transition">
               Request a demo
-            </a>
+            </button>
             <Link to="/" className="rounded-full px-5 py-2.5 border border-white/15 text-white hover:bg-white/10 transition">
               Back to home
             </Link>
@@ -211,13 +211,13 @@ export default function UrologiqPage() {
             <div>
               <h3 className="text-white font-semibold text-xl">Pilot Urologiq with your clinical team</h3>
               <p className="mt-2 text-slate-300 text-sm md:text-base">
-                Email <a href="mailto:info@biocliq.com" className="text-cyan-300 hover:text-white transition">info@biocliq.com</a> or call <a href="tel:+919731121919" className="text-cyan-300 hover:text-white transition">+91-9731121919</a> to schedule a demonstration.
+                Email <button onClick={openContactForm} className="text-cyan-300 hover:text-white transition">info@biocliq.com</button> or call <a href="tel:+919731121919" className="text-cyan-300 hover:text-white transition">+91-9731121919</a> to schedule a demonstration.
               </p>
             </div>
             <div className="flex flex-wrap gap-3">
-              <a href="mailto:info@biocliq.com?subject=Start%20a%20Urologiq%20pilot" className="rounded-full px-5 py-2.5 bg-cyan-500 text-slate-900 font-medium hover:brightness-110 transition">
+              <button onClick={openContactForm} className="rounded-full px-5 py-2.5 bg-cyan-500 text-slate-900 font-medium hover:brightness-110 transition">
                 Schedule a briefing
-              </a>
+              </button>
               <Link to="/" className="rounded-full px-5 py-2.5 border border-white/15 text-white hover:bg-white/10 transition">
                 Explore other solutions
               </Link>

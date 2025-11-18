@@ -5,21 +5,34 @@ type Props = {
   title: string
   blurb: string
   tag: string
-  href: string
+  href?: string
+  onClick?: () => void
   footer?: string
   logo?: string
 }
 
-export default function TechCard({ title, blurb, tag, href, footer, logo }: Props) {
-  const isInternal = href.startsWith('/')
-  const external = href.startsWith('http')
+export default function TechCard({ title, blurb, tag, href, onClick, footer, logo }: Props) {
+  const isInternal = href?.startsWith('/')
+  const external = href?.startsWith('http')
 
-  const CardWrapper = ({ children }: { children: React.ReactNode }) =>
-    isInternal ? (
-      <Link to={href} className="group text-left w-full rounded-2xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.06] transition overflow-hidden flex flex-col" data-testid={`tech-card-${title}`}>
-        {children}
-      </Link>
-    ) : (
+  const CardWrapper = ({ children }: { children: React.ReactNode }) => {
+    if (onClick) {
+      return (
+        <button onClick={onClick} className="group text-left w-full rounded-2xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.06] transition overflow-hidden flex flex-col" data-testid={`tech-card-${title}`}>
+          {children}
+        </button>
+      )
+    }
+
+    if (isInternal) {
+      return (
+        <Link to={href!} className="group text-left w-full rounded-2xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.06] transition overflow-hidden flex flex-col" data-testid={`tech-card-${title}`}>
+          {children}
+        </Link>
+      )
+    }
+
+    return (
       <a
         href={href}
         className="group text-left w-full rounded-2xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.06] transition overflow-hidden flex flex-col"
@@ -30,6 +43,7 @@ export default function TechCard({ title, blurb, tag, href, footer, logo }: Prop
         {children}
       </a>
     )
+  }
 
   return (
     <CardWrapper>
