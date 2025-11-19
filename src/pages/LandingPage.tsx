@@ -1,11 +1,11 @@
 import { useEffect, MouseEvent, useState } from 'react'
 import Section from '../components/Section'
 import ReactiveMesh from '../components/ReactiveMesh'
-import Metric from '../components/Metric'
 import TechCard from '../components/TechCard'
 import GlowOrb from '../components/GlowOrb'
 import MobileMenu from '../components/MobileMenu'
 import { Bars3Icon } from '@heroicons/react/24/outline'
+import ImpactCard from '../components/ImpactCard'
 
 export default function LandingPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -238,19 +238,26 @@ export default function LandingPage() {
       <div className="relative" id="about-us">
         <Section title="Proven Accuracy, Real Results" kicker="Impact">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            <Metric k="1M+" v="Images processed" />
-            <Metric k="99.2%" v="Expert agreement" />
-            <Metric k="20+" v="Hospitals trust us" />
-            <Metric k="30%" v="Faster TAT" />
-          </div>
-          <div className="mt-8 rounded-2xl border border-white/10 bg-white/[0.03] p-6">
-            <p className="text-sm md:text-base text-slate-300">
-              “Biocliq’s models streamlined our workflow and improved
-              consistency.” —{" "}
-              <span className="text-white">
-                Chief of Radiology, Partner Hospital
-              </span>
-            </p>
+            <ImpactCard
+              icon="👍"
+              title="Improved Consultant satisfaction"
+              description="with smarter, precise reports that help better patient outcomes"
+            />
+            <ImpactCard
+              icon="😊"
+              title="Better patient satisfaction"
+              description="with visual and explainable report"
+            />
+            <ImpactCard
+              icon="💰"
+              title="Reduced cost of operations"
+              description="by 30%"
+            />
+            <ImpactCard
+              icon="📈"
+              title="Increased revenues"
+              description="due to higher referrals"
+            />
           </div>
         </Section>
       </div>
