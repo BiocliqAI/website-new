@@ -3,16 +3,19 @@ import LandingPage from './pages/LandingPage'
 import CorsightPage from './pages/CorsightPage'
 import LlamaPage from './pages/LlamaPage'
 import UrologiqPage from './pages/UrologiqPage'
+import { ContactProvider } from './context/ContactContext'
 
 export default function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/corsight" element={<CorsightPage />} />
-        <Route path="/llama" element={<LlamaPage />} />
-        <Route path="/urologiq" element={<UrologiqPage />} />
-      </Routes>
+      <ContactProvider>
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/corsight" element={<CorsightPage />} />
+          <Route path="/llama" element={<LlamaPage />} />
+          <Route path="/urologiq" element={<UrologiqPage />} />
+        </Routes>
+      </ContactProvider>
     </BrowserRouter>
   )
 }

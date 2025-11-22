@@ -1,8 +1,10 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import Layout from '../Layout'
 import Section from '../components/Section'
 import GlowOrb from '../components/GlowOrb'
 import Badge from '../components/Badge'
+import { useContact } from '../context/ContactContext'
 
 const solutionHighlights = [
   {
@@ -38,36 +40,21 @@ const steps = [
 ]
 
 export default function CorsightPage() {
+  const { openContactModal } = useContact()
+
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }, [])
 
+  const navItems = [
+    { href: '/', label: 'Home' },
+    { href: '#overview', label: 'Why Corsight' },
+    { href: '#workflow', label: 'Workflow' },
+    { href: '#validation', label: 'Validation' }
+  ]
+
   return (
-    <main className="min-h-screen bg-[#070b16] text-slate-200 antialiased selection:bg-cyan-300/30 selection:text-white">
-      <header className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-[#070b16]/60 border-b border-white/10">
-        <div className="max-w-7xl mx-auto flex items-center justify-between px-6 md:px-8 h-16">
-          <Link to="/" className="flex items-center gap-2 text-white font-semibold tracking-tight">
-            <img src="/logo.png" alt="Biocliq AI" className="h-8 w-auto" />
-          </Link>
-          <nav className="hidden md:flex items-center gap-6 text-sm">
-            <Link to="/" className="text-slate-300 hover:text-white transition">
-              Home
-            </Link>
-            <a href="#overview" className="text-slate-300 hover:text-white transition">
-              Why Corsight
-            </a>
-            <a href="#workflow" className="text-slate-300 hover:text-white transition">
-              Workflow
-            </a>
-            <a href="#validation" className="text-slate-300 hover:text-white transition">
-              Validation
-            </a>
-          </nav>
-          <a href="mailto:info@biocliq.com?subject=Connect%20about%20Corsight" className="rounded-full px-4 py-1.5 bg-cyan-500 text-slate-900 text-sm font-medium hover:brightness-110 transition">
-            Talk to us
-          </a>
-        </div>
-      </header>
+    <Layout navItems={navItems}>
 
       <div className="relative py-16 md:py-24 overflow-hidden">
         <GlowOrb />
@@ -84,9 +71,12 @@ export default function CorsightPage() {
             Get a comprehensive heart assessment with a low dose, non-gated CT.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <a href="mailto:info@biocliq.com?subject=Corsight%20demo" className="rounded-full px-5 py-2.5 bg-cyan-500 text-slate-900 font-medium hover:brightness-110 transition">
+            <button
+              onClick={openContactModal}
+              className="rounded-full px-5 py-2.5 bg-cyan-500 text-slate-900 font-medium hover:brightness-110 transition"
+            >
               Request a demo
-            </a>
+            </button>
             <Link to="/" className="rounded-full px-5 py-2.5 border border-white/15 text-white hover:bg-white/10 transition">
               Back to home
             </Link>
@@ -143,17 +133,19 @@ export default function CorsightPage() {
         </p>
       </Section>
 
+// ... existing code ...
+
       <Section id="workflow" title="Built for streamlined adoption" kicker="How it works" className="py-10 md:py-14">
-        <div className="grid md:grid-cols-3 gap-6">
-          {steps.map((step) => (
-            <div key={step.title} className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
-              <h3 className="text-white font-semibold text-lg">{step.title}</h3>
-              <p className="mt-2 text-sm md:text-base text-slate-300">{step.detail}</p>
-            </div>
-          ))}
+        <div className="flex justify-center mt-8 md:mt-12">
+          <div className="relative w-full max-w-5xl rounded-2xl border border-white/10 bg-white/[0.03] overflow-hidden p-2 md:p-4">
+            <img
+              src="/corsight-workflow-v2.png"
+              alt="Corsight Workflow: Scan, Analyze, Report"
+              className="w-full h-auto rounded-xl"
+            />
+          </div>
         </div>
       </Section>
-
 
       <Section id="validation" title="Clinically proven accuracy" kicker="Validation" className="py-10 md:py-14">
         <div className="grid md:grid-cols-2 gap-8 items-center">
@@ -212,6 +204,6 @@ export default function CorsightPage() {
           </nav>
         </div>
       </footer>
-    </main>
+    </Layout>
   )
 }

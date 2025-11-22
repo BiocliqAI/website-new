@@ -1,8 +1,10 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import Layout from '../Layout'
 import Section from '../components/Section'
 import GlowOrb from '../components/GlowOrb'
 import Badge from '../components/Badge'
+import { useContact } from '../context/ContactContext'
 
 const workflowSteps = [
   {
@@ -19,28 +21,6 @@ const workflowSteps = [
   }
 ]
 
-const capabilityHighlights = [
-  {
-    icon: '🛰️',
-    text: 'Detects, locates, and quantifies stones across kidneys, ureters, and bladder.'
-  },
-  {
-    icon: '🔍',
-    text: 'Differentiates phleboliths and arterial calcifications from true ureteral stones.'
-  },
-  {
-    icon: '🧪',
-    text: 'Density-based stone composition guides shockwave, PCNL, or laser treatment decisions.'
-  },
-  {
-    icon: '🧭',
-    text: 'Interactive 3D visualization maps the calyceal system and stone volumes for first-time-right intervention.'
-  },
-  {
-    icon: '🧬',
-    text: 'Handles complex anatomies including horseshoe kidneys, dual ureters, staghorn calculi, and peri-stent stones.'
-  }
-]
 
 const complexCases = [
   {
@@ -61,36 +41,21 @@ const complexCases = [
 ]
 
 export default function UrologiqPage() {
+  const { openContactModal } = useContact()
+
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }, [])
 
+  const navItems = [
+    { href: '/', label: 'Home' },
+    { href: '#features', label: 'Capabilities' },
+    { href: '#workflow', label: 'Workflow' },
+    { href: '#use-cases', label: 'Use cases' }
+  ]
+
   return (
-    <main className="min-h-screen bg-[#070b16] text-slate-200 antialiased selection:bg-cyan-300/30 selection:text-white">
-      <header className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-[#070b16]/60 border-b border-white/10">
-        <div className="max-w-7xl mx-auto flex items-center justify-between px-6 md:px-8 h-16">
-          <Link to="/" className="flex items-center gap-2 text-white font-semibold tracking-tight">
-            <img src="/logo.png" alt="Biocliq AI" className="h-8 w-auto" />
-          </Link>
-          <nav className="hidden md:flex items-center gap-6 text-sm">
-            <Link to="/" className="text-slate-300 hover:text-white transition">
-              Home
-            </Link>
-            <a href="#features" className="text-slate-300 hover:text-white transition">
-              Capabilities
-            </a>
-            <a href="#workflow" className="text-slate-300 hover:text-white transition">
-              Workflow
-            </a>
-            <a href="#use-cases" className="text-slate-300 hover:text-white transition">
-              Use cases
-            </a>
-          </nav>
-          <a href="mailto:info@biocliq.com?subject=Connect%20about%20Urologiq" className="rounded-full px-4 py-1.5 bg-cyan-500 text-slate-900 text-sm font-medium hover:brightness-110 transition">
-            Talk to us
-          </a>
-        </div>
-      </header>
+    <Layout navItems={navItems}>
 
       <div className="relative py-16 md:py-24 overflow-hidden">
         <GlowOrb />
@@ -107,9 +72,12 @@ export default function UrologiqPage() {
             Detect, quantify, and visualize urinary tract stones with automated reports that urologists love.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <a href="mailto:info@biocliq.com?subject=Urologiq%20demo" className="rounded-full px-5 py-2.5 bg-cyan-500 text-slate-900 font-medium hover:brightness-110 transition">
+            <button
+              onClick={openContactModal}
+              className="rounded-full px-5 py-2.5 bg-cyan-500 text-slate-900 font-medium hover:brightness-110 transition"
+            >
               Request a demo
-            </a>
+            </button>
             <Link to="/" className="rounded-full px-5 py-2.5 border border-white/15 text-white hover:bg-white/10 transition">
               Back to home
             </Link>
@@ -136,15 +104,19 @@ export default function UrologiqPage() {
       </Section>
 
       <Section id="features" title="Everything urologists need, in one click" kicker="Capabilities">
-        <div className="grid md:grid-cols-2 gap-6">
-          {capabilityHighlights.map(({ icon, text }) => (
-            <div key={text} className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-sm md:text-base text-slate-300 space-y-3">
-              <span className="text-3xl block" aria-hidden>
-                {icon}
-              </span>
-              <p>{text}</p>
-            </div>
-          ))}
+        <div className="flex justify-center mt-8 md:mt-12">
+          <div className="relative w-full max-w-5xl rounded-2xl border border-white/10 bg-white/[0.03] overflow-hidden p-2 md:p-4">
+            <img
+              src="/urologiq-capabilities.png"
+              alt="Biocliq Intelligent Urology Suite Capabilities"
+              className="w-full h-auto rounded-xl"
+            />
+            <img
+              src="/logo.png"
+              alt="Biocliq Logo"
+              className="absolute bottom-4 right-4 w-32 md:w-48"
+            />
+          </div>
         </div>
       </Section>
 
@@ -245,6 +217,6 @@ export default function UrologiqPage() {
           </nav>
         </div>
       </footer>
-    </main>
+    </Layout>
   )
 }

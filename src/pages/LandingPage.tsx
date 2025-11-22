@@ -1,14 +1,12 @@
 import { useEffect, MouseEvent, useState } from 'react'
+import Layout from '../Layout'
 import Section from '../components/Section'
 import ReactiveMesh from '../components/ReactiveMesh'
 import TechCard from '../components/TechCard'
 import GlowOrb from '../components/GlowOrb'
-import MobileMenu from '../components/MobileMenu'
-import { Bars3Icon } from '@heroicons/react/24/outline'
 import ImpactCard from '../components/ImpactCard'
 
 export default function LandingPage() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [isMobile, setIsMobile] = useState(window.innerWidth < 640) // Tailwind's 'sm' breakpoint
 
   useEffect(() => {
@@ -29,9 +27,9 @@ export default function LandingPage() {
     console.assert(cards.length === 4, `[TEST] Expected 4 tech cards, found ${cards.length}`)
 
     const text = document.body.innerText || ''
-    ;['Urologiq', 'Corsight', 'OneView', 'Llama'].forEach((name) => {
-      console.assert(text.includes(name), `[TEST] Missing product name in DOM: ${name}`)
-    })
+      ;['Urologiq', 'Corsight', 'OneView', 'Llama'].forEach((name) => {
+        console.assert(text.includes(name), `[TEST] Missing product name in DOM: ${name}`)
+      })
 
     const mapHash = (hash: string) => {
       if (!hash) return hash
@@ -82,47 +80,7 @@ export default function LandingPage() {
   ]
 
   return (
-    <main className="min-h-screen bg-[#070b16] text-slate-200 antialiased selection:bg-cyan-300/30 selection:text-white">
-      <header className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-[#070b16]/60 border-b border-white/10">
-        <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 md:px-8 h-20 md:h-24">
-          <a
-            href="#hero"
-            className="flex items-center gap-3 text-white font-semibold tracking-tight"
-          >
-            <img
-              src="/logo.png"
-              alt="Biocliq AI"
-              className="h-12 w-auto md:h-16"
-            />
-          </a>
-          <nav className="hidden sm:flex items-center gap-6 text-sm">
-            {navItems.map((n) => (
-              <a
-                key={n.href}
-                href={n.href}
-                onClick={(event) => handleNavClick(event, n.href)}
-                className="text-slate-300 hover:text-white transition"
-              >
-                {n.label}
-              </a>
-            ))}
-          </nav>
-          <button
-            type="button"
-            className="-m-2 inline-flex items-center justify-center rounded-md p-2 text-slate-400 sm:hidden"
-            onClick={() => setMobileMenuOpen(true)}
-          >
-            <span className="sr-only">Open main menu</span>
-            <Bars3Icon className="h-6 w-6" aria-hidden="true" />
-          </button>
-          <a
-            href="mailto:info@biocliq.com"
-            className="hidden sm:inline-flex rounded-full px-4 py-1.5 bg-cyan-500 text-slate-900 text-sm font-medium hover:brightness-110 transition"
-          >
-            Get in touch
-          </a>
-        </div>
-      </header>
+    <Layout navItems={navItems} handleNavClick={handleNavClick}>
 
       <div className="relative">
         <Section id="hero" className="pt-20 md:pt-28">
@@ -329,12 +287,6 @@ export default function LandingPage() {
           </nav>
         </div>
       </footer>
-      <MobileMenu
-        isOpen={mobileMenuOpen}
-        onClose={() => setMobileMenuOpen(false)}
-        navItems={navItems}
-        handleNavClick={handleNavClick}
-      />
-    </main>
+    </Layout>
   );
 }

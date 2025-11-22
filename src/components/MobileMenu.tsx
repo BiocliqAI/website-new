@@ -5,15 +5,15 @@ interface MobileMenuProps {
   isOpen: boolean
   onClose: () => void
   navItems: { href: string; label: string }[]
-  handleNavClick: (event: MouseEvent<HTMLAnchorElement>, selector: string) => void
+  handleNavClick?: (event: MouseEvent<HTMLAnchorElement>, selector: string) => void
+  onContactClick: () => void
 }
 
-export default function MobileMenu({ isOpen, onClose, navItems, handleNavClick }: MobileMenuProps) {
+export default function MobileMenu({ isOpen, onClose, navItems, handleNavClick, onContactClick }: MobileMenuProps) {
   return (
     <div
-      className={`fixed inset-0 z-50 bg-[#070b16] transform ${
-        isOpen ? 'translate-x-0' : 'translate-x-full'
-      } transition-transform duration-300 ease-in-out`}
+      className={`fixed inset-0 z-50 bg-[#0f1623] transform ${isOpen ? 'translate-x-0' : 'translate-x-full'
+        } transition-transform duration-300 ease-in-out`}
     >
       <div className="flex justify-end p-4">
         <button onClick={onClose} className="text-white">
@@ -26,7 +26,7 @@ export default function MobileMenu({ isOpen, onClose, navItems, handleNavClick }
             key={n.href}
             href={n.href}
             onClick={(event) => {
-              handleNavClick(event, n.href)
+              if (handleNavClick) handleNavClick(event, n.href)
               onClose()
             }}
             className="text-slate-300 hover:text-white transition"
@@ -34,13 +34,15 @@ export default function MobileMenu({ isOpen, onClose, navItems, handleNavClick }
             {n.label}
           </a>
         ))}
-        <a
-          href="mailto:info@biocliq.com"
+        <button
+          onClick={() => {
+            onClose()
+            onContactClick()
+          }}
           className="mt-8 rounded-full px-6 py-2 bg-cyan-500 text-slate-900 text-xl font-medium hover:brightness-110 transition"
-          onClick={onClose}
         >
           Get in touch
-        </a>
+        </button>
       </nav>
     </div>
   )

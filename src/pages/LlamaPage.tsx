@@ -1,8 +1,10 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import Layout from '../Layout'
 import Section from '../components/Section'
 import GlowOrb from '../components/GlowOrb'
 import Badge from '../components/Badge'
+import { useContact } from '../context/ContactContext'
 
 const workloadFacts = [
   'Lower limb angiograms span up to 1,500 slices per study.',
@@ -26,36 +28,21 @@ const automationHighlights = [
 ]
 
 export default function LlamaPage() {
+  const { openContactModal } = useContact()
+
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }, [])
 
+  const navItems = [
+    { href: '/', label: 'Home' },
+    { href: '#challenge', label: 'Challenge' },
+    { href: '#automation', label: 'Why LLAMA' },
+    { href: '#visuals', label: 'Visuals' }
+  ]
+
   return (
-    <main className="min-h-screen bg-[#070b16] text-slate-200 antialiased selection:bg-cyan-300/30 selection:text-white">
-      <header className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-[#070b16]/60 border-b border-white/10">
-        <div className="max-w-7xl mx-auto flex items-center justify-between px-6 md:px-8 h-16">
-          <Link to="/" className="flex items-center gap-2 text-white font-semibold tracking-tight">
-            <img src="/logo.png" alt="Biocliq AI" className="h-8 w-auto" />
-          </Link>
-          <nav className="hidden md:flex items-center gap-6 text-sm">
-            <Link to="/" className="text-slate-300 hover:text-white transition">
-              Home
-            </Link>
-            <a href="#challenge" className="text-slate-300 hover:text-white transition">
-              Challenge
-            </a>
-            <a href="#automation" className="text-slate-300 hover:text-white transition">
-              Why LLAMA
-            </a>
-            <a href="#visuals" className="text-slate-300 hover:text-white transition">
-              Visuals
-            </a>
-          </nav>
-          <a href="mailto:info@biocliq.com?subject=Connect%20about%20LLAMA" className="rounded-full px-4 py-1.5 bg-cyan-500 text-slate-900 text-sm font-medium hover:brightness-110 transition">
-            Talk to us
-          </a>
-        </div>
-      </header>
+    <Layout navItems={navItems}>
 
       <div className="relative py-16 md:py-24 overflow-hidden">
         <GlowOrb />
@@ -72,9 +59,12 @@ export default function LlamaPage() {
             Automate lower limb angiogram reporting and hand surgeons a clear, collateral-aware roadmap in minutes.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <a href="mailto:info@biocliq.com?subject=LLAMA%20demo" className="rounded-full px-5 py-2.5 bg-cyan-500 text-slate-900 font-medium hover:brightness-110 transition">
+            <button
+              onClick={openContactModal}
+              className="rounded-full px-5 py-2.5 bg-cyan-500 text-slate-900 font-medium hover:brightness-110 transition"
+            >
               Request a demo
-            </a>
+            </button>
             <Link to="/" className="rounded-full px-5 py-2.5 border border-white/15 text-white hover:bg-white/10 transition">
               Back to home
             </Link>
@@ -185,6 +175,6 @@ export default function LlamaPage() {
           </nav>
         </div>
       </footer>
-    </main>
+    </Layout>
   )
 }
