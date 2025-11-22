@@ -158,6 +158,28 @@ export default function LandingPage() {
         </Section>
       </div>
 
+      <div className="relative" id="workflow">
+        <Section title="Advanced AI, Seamlessly Integrated" kicker="Workflow">
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div className="space-y-4 text-sm md:text-base text-slate-300">
+              <p>
+                Biocliq AI isn't just powerful; it's designed to fit effortlessly into your existing radiology workflow.
+              </p>
+              <p>
+                From the CT Scanner to the PACS Server, our automated upload and inference engine ensures that smart reports are generated and sent back in minutes, ready for the radiologist to validate.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-white/[0.03] overflow-hidden p-2">
+              <img
+                src="/workflow-integration.jpg"
+                alt="Biocliq AI Workflow Integration"
+                className="w-full h-auto rounded-xl"
+              />
+            </div>
+          </div>
+        </Section>
+      </div>
+
       <div className="relative" id="research">
         <Section title="Certifications" kicker="Validation">
           <div className="grid gap-6 md:grid-cols-2 items-center">

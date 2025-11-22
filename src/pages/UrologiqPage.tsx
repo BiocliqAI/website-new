@@ -107,14 +107,9 @@ export default function UrologiqPage() {
         <div className="flex justify-center mt-8 md:mt-12">
           <div className="relative w-full max-w-5xl rounded-2xl border border-white/10 bg-white/[0.03] overflow-hidden p-2 md:p-4">
             <img
-              src="/urologiq-capabilities.png"
+              src="/urologiq-capabilities-v2.jpg"
               alt="Biocliq Intelligent Urology Suite Capabilities"
               className="w-full h-auto rounded-xl"
-            />
-            <img
-              src="/logo.png"
-              alt="Biocliq Logo"
-              className="absolute bottom-4 right-4 w-32 md:w-48"
             />
           </div>
         </div>
@@ -187,9 +182,12 @@ export default function UrologiqPage() {
               </p>
             </div>
             <div className="flex flex-wrap gap-3">
-              <a href="mailto:info@biocliq.com?subject=Start%20a%20Urologiq%20pilot" className="rounded-full px-5 py-2.5 bg-cyan-500 text-slate-900 font-medium hover:brightness-110 transition">
+              <button
+                onClick={openContactModal}
+                className="rounded-full px-5 py-2.5 bg-cyan-500 text-slate-900 font-medium hover:brightness-110 transition"
+              >
                 Schedule a briefing
-              </a>
+              </button>
               <Link to="/" className="rounded-full px-5 py-2.5 border border-white/15 text-white hover:bg-white/10 transition">
                 Explore other solutions
               </Link>

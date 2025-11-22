@@ -145,9 +145,12 @@ export default function LlamaPage() {
               </p>
             </div>
             <div className="flex flex-wrap gap-3">
-              <a href="mailto:info@biocliq.com?subject=Start%20a%20LLAMA%20pilot" className="rounded-full px-5 py-2.5 bg-cyan-500 text-slate-900 font-medium hover:brightness-110 transition">
+              <button
+                onClick={openContactModal}
+                className="rounded-full px-5 py-2.5 bg-cyan-500 text-slate-900 font-medium hover:brightness-110 transition"
+              >
                 Schedule a briefing
-              </a>
+              </button>
               <Link to="/" className="rounded-full px-5 py-2.5 border border-white/15 text-white hover:bg-white/10 transition">
                 Explore other solutions
               </Link>
