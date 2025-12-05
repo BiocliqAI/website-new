@@ -7,9 +7,10 @@ interface HeaderProps {
     onContactClick: () => void
     onMobileMenuOpen: () => void
     handleNavClick?: (event: MouseEvent<HTMLAnchorElement>, selector: string) => void
+    showContactButton?: boolean
 }
 
-export default function Header({ navItems, onContactClick, onMobileMenuOpen, handleNavClick }: HeaderProps) {
+export default function Header({ navItems, onContactClick, onMobileMenuOpen, handleNavClick, showContactButton = true }: HeaderProps) {
     return (
         <header className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-[#070b16]/60 border-b border-white/10">
             <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 md:px-8 h-20 md:h-24">
@@ -53,12 +54,14 @@ export default function Header({ navItems, onContactClick, onMobileMenuOpen, han
                     <span className="sr-only">Open main menu</span>
                     <Bars3Icon className="h-6 w-6" aria-hidden="true" />
                 </button>
-                <button
-                    onClick={onContactClick}
-                    className="hidden sm:inline-flex rounded-full px-4 py-1.5 bg-cyan-500 text-slate-900 text-sm font-medium hover:brightness-110 transition"
-                >
-                    Get in touch
-                </button>
+                {showContactButton && (
+                    <button
+                        onClick={onContactClick}
+                        className="hidden sm:inline-flex rounded-full px-4 py-1.5 bg-cyan-500 text-slate-900 text-sm font-medium hover:brightness-110 transition"
+                    >
+                        Get in touch
+                    </button>
+                )}
             </div>
         </header>
     )

@@ -7,9 +7,10 @@ interface LayoutProps {
     children: ReactNode
     navItems: { href: string; label: string }[]
     handleNavClick?: (event: MouseEvent<HTMLAnchorElement>, selector: string) => void
+    showContactButton?: boolean
 }
 
-export default function Layout({ children, navItems, handleNavClick }: LayoutProps) {
+export default function Layout({ children, navItems, handleNavClick, showContactButton = true }: LayoutProps) {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
     const { openContactModal } = useContact()
 
@@ -20,6 +21,7 @@ export default function Layout({ children, navItems, handleNavClick }: LayoutPro
                 onContactClick={openContactModal}
                 onMobileMenuOpen={() => setMobileMenuOpen(true)}
                 handleNavClick={handleNavClick}
+                showContactButton={showContactButton}
             />
 
             {children}
@@ -30,6 +32,7 @@ export default function Layout({ children, navItems, handleNavClick }: LayoutPro
                 navItems={navItems}
                 handleNavClick={handleNavClick}
                 onContactClick={openContactModal}
+                showContactButton={showContactButton}
             />
         </main>
     )

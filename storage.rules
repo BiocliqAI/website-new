@@ -1,0 +1,11 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /cvs/{fileName} {
+      // Allow anyone to upload a file
+      allow write: if true;
+      // Allow anyone to read the file (needed for the email link to work)
+      allow read: if true;
+    }
+  }
+}

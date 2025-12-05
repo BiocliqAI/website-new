@@ -7,9 +7,10 @@ interface MobileMenuProps {
   navItems: { href: string; label: string }[]
   handleNavClick?: (event: MouseEvent<HTMLAnchorElement>, selector: string) => void
   onContactClick: () => void
+  showContactButton?: boolean
 }
 
-export default function MobileMenu({ isOpen, onClose, navItems, handleNavClick, onContactClick }: MobileMenuProps) {
+export default function MobileMenu({ isOpen, onClose, navItems, handleNavClick, onContactClick, showContactButton = true }: MobileMenuProps) {
   return (
     <div
       className={`fixed inset-0 z-50 bg-[#0f1623] transform ${isOpen ? 'translate-x-0' : 'translate-x-full'
@@ -34,15 +35,17 @@ export default function MobileMenu({ isOpen, onClose, navItems, handleNavClick, 
             {n.label}
           </a>
         ))}
-        <button
-          onClick={() => {
-            onClose()
-            onContactClick()
-          }}
-          className="mt-8 rounded-full px-6 py-2 bg-cyan-500 text-slate-900 text-xl font-medium hover:brightness-110 transition"
-        >
-          Get in touch
-        </button>
+        {showContactButton && (
+          <button
+            onClick={() => {
+              onClose()
+              onContactClick()
+            }}
+            className="mt-8 rounded-full px-6 py-2 bg-cyan-500 text-slate-900 text-xl font-medium hover:brightness-110 transition"
+          >
+            Get in touch
+          </button>
+        )}
       </nav>
     </div>
   )

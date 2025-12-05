@@ -76,7 +76,8 @@ export default function LandingPage() {
   const navItems = [
     { href: '#intro', label: 'Mission' },
     { href: '#products', label: 'Products' },
-    { href: '#about-us', label: 'About Us' }
+    { href: '#about-us', label: 'About Us' },
+    { href: '/careers', label: 'Careers' }
   ]
 
   return (
@@ -297,6 +298,7 @@ export default function LandingPage() {
             {[
               { href: "#intro", label: "Mission" },
               { href: "#about-us", label: "About Us" },
+              { href: "/careers", label: "Careers" },
             ].map((n) => (
               <a
                 key={n.href}

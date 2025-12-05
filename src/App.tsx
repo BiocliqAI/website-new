@@ -3,6 +3,7 @@ import LandingPage from './pages/LandingPage'
 import CorsightPage from './pages/CorsightPage'
 import LlamaPage from './pages/LlamaPage'
 import UrologiqPage from './pages/UrologiqPage'
+import CareersPage from './pages/CareersPage'
 import { ContactProvider } from './context/ContactContext'
 
 export default function App() {
@@ -14,6 +15,7 @@ export default function App() {
           <Route path="/corsight" element={<CorsightPage />} />
           <Route path="/llama" element={<LlamaPage />} />
           <Route path="/urologiq" element={<UrologiqPage />} />
+          <Route path="/careers" element={<CareersPage />} />
         </Routes>
       </ContactProvider>
     </BrowserRouter>
