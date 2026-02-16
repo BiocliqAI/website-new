@@ -25,5 +25,3 @@ jobs:
             pnpm install
             command -v pm2 >/dev/null 2>&1 || pnpm install -g pm2
             pnpm run build
-            pm2 reload bicoliq_website || pm2 serve dist 3360 --spa --name biocliq_website
-            pm2 save
