@@ -79,6 +79,18 @@ export default function LandingPage() {
     { href: '/careers', label: 'Careers' }
   ]
 
+  const biomarkerTickerItems = [
+    { label: 'Liver Fat', tone: 'border-rose-300/35 bg-rose-400/15 text-rose-100' },
+    { label: 'Bone Strength', tone: 'border-amber-300/40 bg-amber-300/15 text-amber-100' },
+    { label: 'Muscle Strength', tone: 'border-emerald-300/40 bg-emerald-300/15 text-emerald-100' },
+    { label: 'Visceral Fat', tone: 'border-fuchsia-300/35 bg-fuchsia-300/15 text-fuchsia-100' },
+    { label: 'Kidney Health', tone: 'border-sky-300/40 bg-sky-300/15 text-sky-100' },
+    { label: 'Aneurysm', tone: 'border-red-300/35 bg-red-300/15 text-red-100' },
+    { label: 'Aortic Calcifications', tone: 'border-indigo-300/40 bg-indigo-300/15 text-indigo-100' },
+    { label: 'Coronary Artery Calcifications', tone: 'border-orange-300/35 bg-orange-300/15 text-orange-100' },
+    { label: 'Organ Volumes', tone: 'border-violet-300/40 bg-violet-300/15 text-violet-100' }
+  ]
+
   return (
     <Layout navItems={navItems} handleNavClick={handleNavClick}>
 
@@ -118,7 +130,7 @@ export default function LandingPage() {
                   </a>
                 </div>
               </div>
-              <div>
+              <div className="space-y-4">
                 <div className="aspect-video overflow-hidden">
                   <video
                     className="w-full h-full object-cover"
@@ -130,6 +142,28 @@ export default function LandingPage() {
                     <source src="/body.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
                   </video>
+                </div>
+                <div className="biomarker-ticker relative overflow-hidden rounded-xl border border-cyan-200/15 bg-[#0b162a]/90">
+                  <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-10 bg-gradient-to-r from-[#0b162a] to-transparent" />
+                  <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-10 bg-gradient-to-l from-[#0b162a] to-transparent" />
+                  <div className="biomarker-ticker-track flex w-max">
+                    {[false, true].map((isClone) => (
+                      <ul
+                        key={isClone ? 'biomarker-clone' : 'biomarker-main'}
+                        aria-hidden={isClone}
+                        className="flex shrink-0 items-center gap-2.5 px-4 py-2.5"
+                      >
+                        {biomarkerTickerItems.map((item, index) => (
+                          <li
+                            key={`${isClone ? 'clone' : 'main'}-${index}-${item.label}`}
+                            className={`whitespace-nowrap rounded-full border px-3 py-1 text-[0.72rem] font-semibold tracking-[0.01em] md:text-xs ${item.tone}`}
+                          >
+                            {item.label}
+                          </li>
+                        ))}
+                      </ul>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>

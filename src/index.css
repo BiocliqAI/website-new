@@ -12,3 +12,33 @@ body {
   color: #e5e7eb;
   font-family: 'Manrope', 'Avenir Next', 'Segoe UI', sans-serif;
 }
+
+@keyframes biomarkerTickerScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.biomarker-ticker-track {
+  animation: biomarkerTickerScroll 32s linear infinite;
+  will-change: transform;
+}
+
+.biomarker-ticker:hover .biomarker-ticker-track {
+  animation-play-state: paused;
+}
+
+@media (max-width: 640px) {
+  .biomarker-ticker-track {
+    animation-duration: 24s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .biomarker-ticker-track {
+    animation: none;
+  }
+}
