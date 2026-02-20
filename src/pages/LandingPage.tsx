@@ -95,45 +95,46 @@ export default function LandingPage() {
     <Layout navItems={navItems} handleNavClick={handleNavClick}>
 
       <div className="relative">
-        <Section id="hero" className="pt-20 md:pt-28">
-          <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-4 sm:p-5 lg:p-6">
-            <div className="grid gap-8 xl:gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-center">
-              <div className="relative isolate space-y-6 lg:space-y-7">
+        <Section id="hero" className="pt-14 sm:pt-18 md:pt-28">
+          <div className="overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] p-3.5 sm:p-5 lg:p-6">
+            <div className="grid min-w-0 gap-5 sm:gap-7 xl:gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-center">
+              <div className="relative isolate min-w-0 space-y-4 sm:space-y-6 lg:space-y-7">
                 <div className="pointer-events-none absolute -inset-6 -z-10 rounded-3xl bg-[radial-gradient(circle_at_20%_30%,rgba(34,211,238,0.24),transparent_55%),radial-gradient(circle_at_80%_70%,rgba(56,189,248,0.18),transparent_60%)] blur-2xl" />
-                <span className="inline-flex items-center rounded-full border border-cyan-300/30 bg-cyan-300/10 px-4 py-1.5 text-[0.64rem] md:text-[0.68rem] uppercase tracking-[0.28em] text-cyan-100/90">
+                <span className="inline-flex items-center rounded-full border border-cyan-300/30 bg-cyan-300/10 px-3.5 py-1.5 text-[0.62rem] sm:px-4 sm:text-[0.68rem] uppercase tracking-[0.22em] sm:tracking-[0.28em] text-cyan-100/90">
                   Product Launch
                 </span>
                 <h1 className="[font-family:'Sora',sans-serif] overflow-visible text-white leading-[0.94]">
-                  <span className="block text-base md:text-xl lg:text-[1.65rem] font-semibold tracking-[0.02em] text-slate-100/95">
+                  <span className="block text-[1.05rem] sm:text-xl lg:text-[1.65rem] font-semibold tracking-[0.02em] text-slate-100/95">
                     Launching
                   </span>
-                  <span className="mt-1.5 md:mt-2 block w-fit max-w-full overflow-visible pr-[0.08em] pb-[0.08em] text-[clamp(2.6rem,6.2vw,5.6rem)] font-black leading-[0.9] tracking-[-0.024em] md:tracking-[-0.03em] text-cyan-100 drop-shadow-[0_0_28px_rgba(34,211,238,0.45)]">
+                  <span className="mt-1.5 md:mt-2 flex w-fit max-w-full overflow-visible pr-[0.08em] pb-[0.08em] text-[clamp(2.15rem,10.5vw,4rem)] sm:text-[clamp(2.6rem,6.2vw,5.6rem)] font-black leading-[0.9] tracking-[-0.024em] md:tracking-[-0.03em] text-cyan-100 drop-shadow-[0_0_28px_rgba(34,211,238,0.45)]">
                     <span className="text-cyan-100">Health</span>
                     <span className="text-cyan-300">metri</span>
                     <span className="text-cyan-400">x</span>
+                    <sup className="ml-1 text-[0.22em] font-semibold tracking-[0.03em] text-cyan-100/90">TM</sup>
                   </span>
-                  <span className="mt-3.5 md:mt-4 block max-w-[22ch] text-[clamp(1.1rem,1.95vw,1.85rem)] font-semibold leading-[1.24] text-slate-100">
+                  <span className="mt-2.5 sm:mt-4 block max-w-[22ch] text-[clamp(1.02rem,5vw,1.35rem)] sm:text-[clamp(1.1rem,1.95vw,1.85rem)] font-semibold leading-[1.24] text-slate-100">
                     A world-leading preventive imaging platform
                   </span>
                 </h1>
-                <p className="max-w-[30ch] border-l-2 border-cyan-300/70 pl-4 text-[clamp(1.05rem,1.55vw,1.5rem)] leading-[1.35] text-cyan-100/90">
+                <p className="max-w-[30ch] border-l-2 border-cyan-300/70 pl-3.5 sm:pl-4 text-[clamp(0.98rem,4.4vw,1.22rem)] sm:text-[clamp(1.05rem,1.55vw,1.5rem)] leading-[1.35] text-cyan-100/90">
                   Turn your images into health insights
                 </p>
-                <div className="flex max-w-2xl flex-wrap gap-2.5 md:gap-3 text-[0.78rem] md:text-sm text-slate-300">
-                  <span className="rounded-full border border-white/15 bg-white/5 px-3 py-1.5">58 Biomarkers</span>
-                  <span className="rounded-full border border-white/15 bg-white/5 px-3 py-1.5">CT &amp; MR ready</span>
+                <div className="flex w-full max-w-full flex-nowrap items-center gap-1.5 overflow-x-auto pb-1 text-[0.63rem] leading-none text-slate-300 [scrollbar-width:none] [-ms-overflow-style:none] sm:max-w-2xl sm:flex-wrap sm:gap-3 sm:overflow-visible sm:pb-0 sm:text-sm [&::-webkit-scrollbar]:hidden">
+                  <span className="inline-flex shrink-0 items-center justify-center rounded-full border border-white/15 bg-white/5 px-2 py-1 sm:px-3 sm:py-1.5">58 Biomarkers</span>
+                  <span className="inline-flex shrink-0 items-center justify-center rounded-full border border-white/15 bg-white/5 px-2 py-1 sm:px-3 sm:py-1.5">CT &amp; MR ready</span>
                   <a
                     href="https://healthmetrix.ai"
-                    className="rounded-full border border-white/15 bg-white/5 px-3 py-1.5 transition hover:border-cyan-300/40 hover:text-cyan-200"
+                    className="inline-flex shrink-0 items-center justify-center rounded-full border border-white bg-white px-2 py-1 text-slate-900 transition hover:bg-cyan-100 hover:text-slate-950 sm:px-3 sm:py-1.5"
                   >
                     Click here to know more
                   </a>
                 </div>
               </div>
-              <div className="space-y-4">
-                <div className="aspect-video overflow-hidden">
+              <div className="min-w-0 space-y-4">
+                <div className="aspect-video overflow-hidden rounded-lg">
                   <video
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover max-sm:scale-[1.08]"
                     autoPlay
                     muted
                     loop
@@ -143,20 +144,20 @@ export default function LandingPage() {
                     Your browser does not support the video tag.
                   </video>
                 </div>
-                <div className="biomarker-ticker relative overflow-hidden rounded-xl border border-cyan-200/15 bg-[#0b162a]/90">
-                  <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-10 bg-gradient-to-r from-[#0b162a] to-transparent" />
-                  <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-10 bg-gradient-to-l from-[#0b162a] to-transparent" />
-                  <div className="biomarker-ticker-track flex w-max">
+                <div className="biomarker-ticker relative w-full max-w-full overflow-hidden rounded-xl border border-cyan-200/15 bg-[#0b162a]/90">
+                  <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-7 sm:w-10 bg-gradient-to-r from-[#0b162a] to-transparent" />
+                  <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-7 sm:w-10 bg-gradient-to-l from-[#0b162a] to-transparent" />
+                  <div className="biomarker-ticker-track inline-flex">
                     {[false, true].map((isClone) => (
                       <ul
                         key={isClone ? 'biomarker-clone' : 'biomarker-main'}
                         aria-hidden={isClone}
-                        className="flex shrink-0 items-center gap-2.5 px-4 py-2.5"
+                        className="flex shrink-0 items-center gap-2 px-3 py-2 sm:gap-2.5 sm:px-4 sm:py-2.5"
                       >
                         {biomarkerTickerItems.map((item, index) => (
                           <li
                             key={`${isClone ? 'clone' : 'main'}-${index}-${item.label}`}
-                            className={`whitespace-nowrap rounded-full border px-3 py-1 text-[0.72rem] font-semibold tracking-[0.01em] md:text-xs ${item.tone}`}
+                            className={`whitespace-nowrap rounded-full border px-2.5 py-1 text-[0.67rem] sm:px-3 sm:text-[0.72rem] md:text-xs font-semibold tracking-[0.01em] ${item.tone}`}
                           >
                             {item.label}
                           </li>
