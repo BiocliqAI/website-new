@@ -1,7 +1,6 @@
 import { useEffect, MouseEvent, useState } from 'react'
 import Layout from '../Layout'
 import Section from '../components/Section'
-import ReactiveMesh from '../components/ReactiveMesh'
 import TechCard from '../components/TechCard'
 import GlowOrb from '../components/GlowOrb'
 import ImpactCard from '../components/ImpactCard'
@@ -85,7 +84,56 @@ export default function LandingPage() {
 
       <div className="relative">
         <Section id="hero" className="pt-20 md:pt-28">
-          <ReactiveMesh />
+          <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-4 sm:p-5 lg:p-6">
+            <div className="grid gap-8 xl:gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-center">
+              <div className="relative isolate space-y-6 lg:space-y-7">
+                <div className="pointer-events-none absolute -inset-6 -z-10 rounded-3xl bg-[radial-gradient(circle_at_20%_30%,rgba(34,211,238,0.24),transparent_55%),radial-gradient(circle_at_80%_70%,rgba(56,189,248,0.18),transparent_60%)] blur-2xl" />
+                <span className="inline-flex items-center rounded-full border border-cyan-300/30 bg-cyan-300/10 px-4 py-1.5 text-[0.64rem] md:text-[0.68rem] uppercase tracking-[0.28em] text-cyan-100/90">
+                  Product Launch
+                </span>
+                <h1 className="[font-family:'Sora',sans-serif] overflow-visible text-white leading-[0.94]">
+                  <span className="block text-base md:text-xl lg:text-[1.65rem] font-semibold tracking-[0.02em] text-slate-100/95">
+                    Launching
+                  </span>
+                  <span className="mt-1.5 md:mt-2 block w-fit max-w-full overflow-visible pr-[0.08em] pb-[0.08em] text-[clamp(2.6rem,6.2vw,5.6rem)] font-black leading-[0.9] tracking-[-0.024em] md:tracking-[-0.03em] text-cyan-100 drop-shadow-[0_0_28px_rgba(34,211,238,0.45)]">
+                    <span className="text-cyan-100">Health</span>
+                    <span className="text-cyan-300">metri</span>
+                    <span className="text-cyan-400">x</span>
+                  </span>
+                  <span className="mt-3.5 md:mt-4 block max-w-[22ch] text-[clamp(1.1rem,1.95vw,1.85rem)] font-semibold leading-[1.24] text-slate-100">
+                    A world-leading preventive imaging platform
+                  </span>
+                </h1>
+                <p className="max-w-[30ch] border-l-2 border-cyan-300/70 pl-4 text-[clamp(1.05rem,1.55vw,1.5rem)] leading-[1.35] text-cyan-100/90">
+                  Turn your images into health insights
+                </p>
+                <div className="flex max-w-2xl flex-wrap gap-2.5 md:gap-3 text-[0.78rem] md:text-sm text-slate-300">
+                  <span className="rounded-full border border-white/15 bg-white/5 px-3 py-1.5">58 Biomarkers</span>
+                  <span className="rounded-full border border-white/15 bg-white/5 px-3 py-1.5">CT &amp; MR ready</span>
+                  <a
+                    href="https://healthmetrix.ai"
+                    className="rounded-full border border-white/15 bg-white/5 px-3 py-1.5 transition hover:border-cyan-300/40 hover:text-cyan-200"
+                  >
+                    Click here to know more
+                  </a>
+                </div>
+              </div>
+              <div>
+                <div className="aspect-video overflow-hidden">
+                  <video
+                    className="w-full h-full object-cover"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                  >
+                    <source src="/body.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              </div>
+            </div>
+          </div>
         </Section>
       </div>
 
