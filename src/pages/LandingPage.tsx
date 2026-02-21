@@ -114,11 +114,11 @@ export default function LandingPage() {
                     <sup className="ml-1 text-[0.22em] font-semibold tracking-[0.03em] text-cyan-100/90">TM</sup>
                   </span>
                   <span className="mt-2.5 sm:mt-4 block max-w-[22ch] text-[clamp(1.02rem,5vw,1.35rem)] sm:text-[clamp(1.1rem,1.95vw,1.85rem)] font-semibold leading-[1.24] text-slate-100">
-                    A world-leading preventive imaging platform
+                    AI driven longevity platform
                   </span>
                 </h1>
                 <p className="max-w-[30ch] border-l-2 border-cyan-300/70 pl-3.5 sm:pl-4 text-[clamp(0.98rem,4.4vw,1.22rem)] sm:text-[clamp(1.05rem,1.55vw,1.5rem)] leading-[1.35] text-cyan-100/90">
-                  Turn your images into health insights
+                  Turn routine scans to health insights
                 </p>
                 <div className="flex w-full max-w-full flex-nowrap items-center gap-1.5 overflow-x-auto pb-1 text-[0.63rem] leading-none text-slate-300 [scrollbar-width:none] [-ms-overflow-style:none] sm:max-w-2xl sm:flex-wrap sm:gap-3 sm:overflow-visible sm:pb-0 sm:text-sm [&::-webkit-scrollbar]:hidden">
                   <span className="inline-flex shrink-0 items-center justify-center rounded-full border border-white/15 bg-white/5 px-2 py-1 sm:px-3 sm:py-1.5">58 Biomarkers</span>
@@ -132,7 +132,7 @@ export default function LandingPage() {
                 </div>
               </div>
               <div className="min-w-0 space-y-4">
-                <div className="aspect-video overflow-hidden rounded-lg">
+                <div className="relative aspect-video overflow-hidden rounded-lg">
                   <video
                     className="w-full h-full object-cover max-sm:scale-[1.08]"
                     autoPlay
@@ -143,6 +143,13 @@ export default function LandingPage() {
                     <source src="/body.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
                   </video>
+                  <div className="golden-seal" aria-hidden>
+                    <div className="golden-seal-content">
+                      <span className="golden-seal-kicker">Calibrated with</span>
+                      <span className="golden-seal-number">3000+</span>
+                      <span className="golden-seal-label">patients</span>
+                    </div>
+                  </div>
                 </div>
                 <div className="biomarker-ticker relative w-full max-w-full overflow-hidden rounded-xl border border-cyan-200/15 bg-[#0b162a]/90">
                   <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-7 sm:w-10 bg-gradient-to-r from-[#0b162a] to-transparent" />
